@@ -606,17 +606,17 @@ main > div {
 }
 .primary-button {
     font-size: 1.25em;
-    padding: 0.9em 2em;
+    padding: 0.6em 2em;
     width: fit-content;
     height: auto;
     border-radius: 2em;
     cursor: pointer;
-    background-color: var(--dark-color);
-    color: var(--white-color);
+    background-color: var(--primary-color);
+    color: var(--dark-color);
 }
 .primary-button:hover {
-    background-color: var(--light-color);
-    color: var(--dark-color);
+    background-color: var(--dark-color);
+    color: var(--white-color);
     transition: var(--trans-back-co);
 }
 .products .meta button:hover {
