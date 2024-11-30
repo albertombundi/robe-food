@@ -12,7 +12,7 @@ divTrigger.addEventListener('click', () => {
     }, 250);
 })
 
-//---feicha automaticamente ao clickar fora dele
+//---Fecha automaticamente ao clicar fora dele
 document.addEventListener('click', (e) => {
     const isClosest = e.target.closest(divtoShow);
 
