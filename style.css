@@ -69,7 +69,7 @@ h4{font-size: 1em;}
     color:#7c899a;
 }
 .page-title {
-    margin-bottom: 3em;
+    margin-bottom: 4em;
 }
 .mini-text {
     font-size: 11px;
@@ -652,12 +652,13 @@ main > div {
 *-------------------------------*/
 .single-cart {
     background-color: var(--white-color);
-    padding: 2.5em 0;
 }
 .products.cart .thumbnail {
-    width: 100px;
+    height: 80px;
+    width: 80px;
     border-radius: 10px;
-    margin-bottom: -2.5em;
+    margin-bottom: -1.3em;
+    
 }
 .products.cart .content {
     margin-left: 10px;
@@ -670,7 +671,7 @@ main > div {
     font-size: calc(1.3em + 1vw);
     font-weight: 800;
     line-height: 1;
-    margin: 0 0 -2.5em;
+    margin: 0 0 -2em;
 }
 .products.cart table thead th {
     vertical-align: middle;
@@ -683,7 +684,7 @@ main > div {
     text-align: center;
 }
 .products.cart table :where(th):first-child {
-    text-align: left;
+    text-align:justify;
 }
 
 .products.cart table :where(th, td):last-child {
@@ -741,11 +742,13 @@ main > div {
 }
 .products.cart .cart-total table tr > * {
     padding: 0;
+    border: none;
 }
 .products.cart .cart-total table td {
     text-align: right;
 }
 .cart-summary .cart-total {
+    margin-top: 4em;
     padding: 2em;
     background-color:#e5e8ec;
     line-height: 2em;
@@ -964,6 +967,11 @@ footer .copyright {
         flex-grow: 1;
         max-width: var(--percent100);
         padding: 5px;
+    }
+    .products.cart table :where(th, td) {
+        padding: 2em 1em;
+        text-align: center;
+        border:none;
     }
 }
 
