@@ -45,6 +45,41 @@ h4{font-size: 1em;}
     margin: 0 auto;
 
 }
+.flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+.flexitem {
+    display: flex;
+    align-items: center;
+}
+.breadcrumb {
+    font-size: 13px;
+    margin-bottom: 2em;
+}
+.breadcrumb li:not(:last-child)::after {
+    content: '/';
+    padding: 0 0.5em;
+}
+.breadcrumb li:last-child {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color:#7c899a;
+}
+.page-title {
+    margin-bottom: 3em;
+}
+.mini-text {
+    font-size: 11px;
+    color:#7c899a;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
 
 /*--------------------------
 * 00. SELETOR REUTILIZÁVEL
@@ -566,8 +601,24 @@ main > div {
     cursor: pointer;
     transition: var(--trans-back-co);
 }
+.primary-button {
+    font-size: 1.25em;
+    padding: 0.9em 2em;
+    width: fit-content;
+    height: auto;
+    border-radius: 2em;
+    cursor: pointer;
+    background-color: var(--dark-color);
+    color: var(--primary-color);
+}
+.primary-button:hover {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    transition: var(--trans-back-co);
+}
 .products .meta button:hover {
     background-color: var(--primary-color);
+    color:var(--dark-color);
 }
 .products .meta .like {
     font-size: 1.25em;
@@ -584,7 +635,141 @@ main > div {
 .tabbed nav ul li {
     width: fit-content!important;
 }
+.btn-remove {
+    padding: 0.9em 0.9em;
+    border-radius: 2em;
+    cursor: pointer;
+    background-color: var(--light-color);
+}
+.btn-remove:hover {
+    background-color: var(--primary-color);
+    transition: var(--trans-back-co);
+    color:var(--white-color);
+}
 
+/*------------------------------
+* 12.PÁGINA DO CARRINHO
+*-------------------------------*/
+.single-cart {
+    background-color: var(--white-color);
+    padding: 2.5em 0;
+}
+.products.cart .thumbnail {
+    width: 100px;
+    border-radius: 10px;
+    margin-bottom: -2.5em;
+}
+.products.cart .content {
+    margin-left: 10px;
+}
+.products.cart form {
+    width: 100%;
+}
+.cart-title {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: calc(1.3em + 1vw);
+    font-weight: 800;
+    line-height: 1;
+    margin: 0 0 -2.5em;
+}
+.products.cart table thead th {
+    vertical-align: middle;
+    background-color:#f2f3f5;
+    border-top: 2px solid black;
+    width: 100%;
+}
+.products.cart table :where(th, td) {
+    padding: 2em 1em;
+    text-align: center;
+}
+.products.cart table :where(th):first-child {
+    text-align: left;
+}
+
+.products.cart table :where(th, td):last-child {
+    text-align: left;
+    padding-left: 2em;
+}
+.products.cart table tbody td:first-child {
+    padding-left: 0;
+}
+.products.cart table td :where(.content, .qty-control) {
+    margin: 0;
+    padding: 0;
+}
+.products.cart .qty-control :where(button, input) {
+    width: 32px;
+    height: 32px;
+    padding: 0.25em;
+    text-align: center;
+    outline: 0;
+    background-color: transparent;
+}
+.products.cart .qty-control button {
+    cursor: pointer;
+}
+.cart-summary {
+    width: 100%;
+    margin: auto;
+}
+.cart-summary .content form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+.style :where(input, select, textarea) {
+    padding: 0.75em;
+    outline: 0;
+    background-color: var(--white-color);
+    border-width: solid;
+    border-color: #e5e8ec;
+}
+.products .cart-summary .variant form label {
+    position: relative;
+    border: 0;
+    background-color: var(--white-color);
+    transform: scale(.5) translateX(-25px);
+}
+.cart-summary .variant p span {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    line-height: 3;
+}
+.cart-summary .variant input:checked + label::before {
+    opacity: 1;
+}
+.products.cart .cart-total table tr > * {
+    padding: 0;
+}
+.products.cart .cart-total table td {
+    text-align: right;
+}
+.cart-summary .cart-total {
+    padding: 2em;
+    background-color:#e5e8ec;
+    line-height: 2em;
+}
+.cart-summary .cart-total table {
+    width: 100%;
+}
+.cart-summary .cart-total table tr {
+    display: flex;
+    justify-content: space-between;
+}
+.cart-summary .cart-total td {
+    font-size: 2em;
+    font-family: 'Rubik';
+    font-weight: 800;
+    line-height: 2em;
+}
+.cart-summary .cart-total > a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-top: 2em;
+    font-size: 1.25em;
+}
 
 /*------------------------
  * 05. MASTERPIECE
@@ -773,6 +958,45 @@ footer .copyright {
     transition-delay: 1.7s;
 }
 
+@media screen and (max-width: 481px) {
+    #cart-table tbody tr td:not(:first-child) {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: var(--percent100);
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 639px) {
+    #cart-table thead {
+      display: none;
+    }
+    #cart-table tbody tr {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    #cart-table tbody tr td:first-child {
+      width: var(--percent100);
+      min-width: var(--percent100);
+      position: relative;
+    }
+    #cart-table tbody tr td:not(:first-child) {
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: var(--percent100);
+    }
+    #cart-table tbody tr td:last-child {
+      position: relative;
+      top: 0;
+      right: 0;
+    }
+     /*Página do carrinho*/
+    .products.cart .thumbnail:hover img {
+        transform: unset;
+    }
+  }
+
 
 @media screen and (min-width: 768px) {
     .mobile-only {
@@ -813,6 +1037,17 @@ footer .copyright {
         max-width: 80%;
         margin: 0 auto;
     }
+    /*Página do carrinho*/
+     .products.cart .thumbnail:hover img {
+        transform: unset;
+    }
+    .cart-title {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: calc(1.3em + 1vw);
+        font-weight: 800;
+        line-height: 1;
+        margin: 0 0 -1.6em;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -827,5 +1062,31 @@ footer .copyright {
     }
     .slider .thumb-nav .item h4 {
         display: block;
+    }
+    /*Página do carrinho*/
+    .cart-title {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: calc(1.3em + 1vw);
+        font-weight: 800;
+        line-height: 1;
+        margin: 0 0 -1.8em;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .cart-title {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: calc(1.3em + 1vw);
+        font-weight: 800;
+        line-height: 1;
+        margin: 0 0 -1.3em;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .cart-title {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: calc(1.3em + 1vw);
+        font-weight: 800;
+        line-height: 1;
+        margin: 0 0 -1.3em;
     }
 }
