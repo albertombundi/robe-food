@@ -557,7 +557,7 @@ main > div {
 .products .thumbnail {
     position: relative;
     height: 200px;
-    border-radius: 10px;
+    border-radius: unset;
     margin-bottom: 1em;
     overflow: hidden;
 }
