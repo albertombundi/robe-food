@@ -1,11 +1,27 @@
-// Event listener para os botões de remover (você precisará adicionar esses botões no seu HTML)
-document.querySelectorAll(".remove-from-cart").forEach((button) => {
-  button.addEventListener("click", function () {
-    const productName = this.dataset.name;
-    const product = { name: productName };
-    removeFromCart(product);
-  });
-});// -------MENU
+// Adicione um listener para mudanças no localStorage
+window.addEventListener('storage', function(e) {
+    if (e.key === 'cart') {
+        updateCartCount();
+    }
+});// Adicione esta função no início do seu arquivo script.js
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const count = cart.reduce((total, item) => total + item.quantity, 0);
+    const cartCountElement = document.getElementById('cart-count');
+
+    if (cartCountElement) {
+        cartCountElement.textContent = count;
+
+        // Adiciona a animação
+        cartCountElement.classList.add('pulse');
+        setTimeout(() => {
+            cartCountElement.classList.remove('pulse');
+        }, 300);
+    }
+}
+
+// Chame esta função quando a página carregar
+document.addEventListener('DOMContentLoaded', updateCartCount);
 const divtoShow = "nav .menu";
 const divPopup = document.querySelector(divtoShow);
 const divTrigger = document.querySelector(".m-trigger");
@@ -110,6 +126,7 @@ function updateCart(product, action) {
 // Função para adicionar item ao carrinho
 function addToCart(product) {
   updateCart(product, 'add');
+  updateCartCount(); // Adicione esta linha
   alert("Produto adicionado ao carrinho!");
 }
 

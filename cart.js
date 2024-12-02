@@ -1,4 +1,4 @@
- // Função que recebe do os item apartir do index.html  e  exibe os produtos dentro corpo da tabela(tbody)
+// Função que recebe os itens a partir do index.html e exibe os produtos dentro do corpo da tabela (tbody)
  document.addEventListener('DOMContentLoaded', function() {
      const cartTableBody = document.querySelector('#cart-table tbody');
      let cart = JSON.parse(localStorage.getItem('cart')) || [];
