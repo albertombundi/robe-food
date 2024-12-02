@@ -7,7 +7,9 @@
     <title>RobéFood - Restaurante</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" />
+    <script>
+    </script>
 </head>
 
 <body>
@@ -33,9 +35,9 @@
                                 <i class="ri-search-line"></i>
                                 <i class="ri-close-line"></i>
                             </a>
-                            <a href="cart.html" class="icart">
-                                <i class="ri-shopping-cart-line"></i>
-                                <span class="number">0</span>
+                            <a href="cart.html" class="cart-trigger">
+                                <i class="ri-shopping-cart-2-line" id="cart-icon"></i>
+                                <span class="cart-count">0</span>
                             </a>
                             <a href="#" class="m-trigger mobile-only">
                                 <i class="ri-menu-line"></i>
@@ -132,7 +134,8 @@
                 <div class="container">
                     <div class="head-brief left animate">
                         <h3>O que fizemos para ti</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate totam molestiae vero consectetur delectus saepe error voluptates provident consequatur nostrum</p>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate totam molestiae vero
+                            consectetur delectus saepe error voluptates provident consequatur nostrum</p>
                     </div>
                     <div class="cat-item">
                         <ul class="up animate">
@@ -209,8 +212,9 @@
             <div class="tabbed has-bg">
                 <div class="container">
                     <div class="head-brief up animate">
-                        <h3>Nossos Melhores Produtos</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate totam molestiae vero consectetur delectus saepe error voluptates provident consequatur nostrum</p>
+                        <h3>Nossos Melhores Pratos</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate totam molestiae vero
+                            consectetur delectus saepe error voluptates provident consequatur nostrum</p>
                     </div>
                     <nav class="tnav link-slide swiper">
                         <ul class="swiper-wrapper">
@@ -231,7 +235,7 @@
                                             <a href="#">
                                                 <img src="assets/products/baked1.jpg" alt="">
                                             </a>
-                                        </div> 
+                                        </div>
                                         <div class="meta">
                                             <div class="catrate">
                                                 <span class="cat"><a href="#">Assados no forno</a></span>
@@ -245,7 +249,15 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button 
+                                                data-name="Pastelaria é bom" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/baked1.jpg"
+                                                
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -271,7 +283,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Pastelaria lorem upsum dolor sit amet" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/baked2.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -297,7 +316,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Dolor Cupcakes" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/baked3.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -323,7 +349,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Dolor Cupcakes" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/baked4.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -349,7 +382,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Dolor Cupcakes" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/baked5.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -375,7 +415,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Cupcakes cozinhados em casa" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/baked6.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -401,7 +448,13 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Cupcakes cozinhados em casa" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/baked7.jpg"
+                                                >
+                                                    Adicionar no carrinho</button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -427,7 +480,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Bolo caseiro lorem" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/baked8.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -453,7 +513,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Bolo caseiro" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/baked9.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -471,7 +538,7 @@
                                             <a href="#">
                                                 <img src="assets/products/garnish1.jpg" alt="">
                                             </a>
-                                        </div> 
+                                        </div>
                                         <div class="meta">
                                             <div class="catrate">
                                                 <span class="cat"><a href="#">Decorações</a></span>
@@ -485,7 +552,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Sushi ah sushi de novo" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/garnish1.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -511,7 +585,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Lorem upsum dolor sit amet consectetur" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/garnish2.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -537,7 +618,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Dolor Cupcakes" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/garnish3.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -563,7 +651,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Dolor Cupcakes" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/garnish4.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -589,7 +684,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Dolor Cupcakes" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/garnish5.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -615,7 +717,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Dolor Cupcakes" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/garnish6.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -633,7 +742,7 @@
                                             <a href="#">
                                                 <img src="assets/products/herbs1.jpg" alt="">
                                             </a>
-                                        </div> 
+                                        </div>
                                         <div class="meta">
                                             <div class="catrate">
                                                 <span class="cat"><a href="#">Hervas & Temperos</a></span>
@@ -647,7 +756,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Sushi ah sushi de novo" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/herbs1.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -673,7 +789,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Lorem upsum dolor sit amet consectetur" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/herbs2.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -699,7 +822,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Dolor Cupcakes" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/herbs3.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -725,7 +855,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Dolor Cupcakes" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/herbs4.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -751,7 +888,13 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Dolor Cupcakes" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/herbs5.jpg"
+                                                >
+                                                    Adicionar no carrinho</button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -769,7 +912,7 @@
                                             <a href="#">
                                                 <img src="assets/products/garnish1.jpg" alt="">
                                             </a>
-                                        </div> 
+                                        </div>
                                         <div class="meta">
                                             <div class="catrate">
                                                 <span class="cat"><a href="#">Decorações</a></span>
@@ -783,7 +926,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Sushi ah sushi de novo" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/garnish1.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -809,7 +959,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Lorem upsum dolor sit amet consectetur" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/garnish2.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -835,7 +992,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Dolor Cupcakes" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/garnish3.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -861,7 +1025,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Dolor Cupcakes" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/garnish4.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -887,7 +1058,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Dolor Cupcakes" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/garnish5.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -913,7 +1091,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="Dolor Cupcakes" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/products/garnish6.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -931,7 +1116,7 @@
                                             <a href="#">
                                                 <img src="assets/categories/cat2.jpg" alt="">
                                             </a>
-                                        </div> 
+                                        </div>
                                         <div class="meta">
                                             <div class="catrate">
                                                 <span class="cat"><a href="#">Comida do mar</a></span>
@@ -945,7 +1130,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="The shrimp seafood" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/categories/cat2.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -955,7 +1147,7 @@
                                 </ul>
                             </div>
                             <!--Seafood-->
-                            
+
                             <div class="item swiper-slide">
                                 <ul>
                                     <li>
@@ -963,7 +1155,7 @@
                                             <a href="#">
                                                 <img src="assets/categories/cat1.jpg" alt="">
                                             </a>
-                                        </div> 
+                                        </div>
                                         <div class="meta">
                                             <div class="catrate">
                                                 <span class="cat"><a href="#">Vegetais</a></span>
@@ -977,7 +1169,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="The shrimp seafood" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/categories/cat1.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -989,7 +1188,7 @@
                                             <a href="#">
                                                 <img src="assets/categories/cat4.jpg" alt="">
                                             </a>
-                                        </div> 
+                                        </div>
                                         <div class="meta">
                                             <div class="catrate">
                                                 <span class="cat"><a href="#">Vegetais</a></span>
@@ -1003,7 +1202,14 @@
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button>Adicionar no carrinho</button>
+                                                <button
+                                                data-name="The shrimp seafood" 
+                                                data-price="11.99"
+                                                data-quantity="1"
+                                                data-image="assets/categories/cat4.jpg"
+                                                >
+                                                    Adicionar no carrinho
+                                                </button>
                                                 <a href="#" class="like">
                                                     <i class="ri-heart-line"></i>
                                                 </a>
@@ -1013,7 +1219,7 @@
                                 </ul>
                             </div>
                             <!--Vegetais-->
-
+                            
                         </div>
                     </div>
                 </div>
@@ -1026,8 +1232,9 @@
                 <div class="bg-dark"></div>
                 <div class="container">
                     <div class="head-brief left animate">
-                        <h3>Da cozinha para masterpiece</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate totam molestiae vero consectetur delectus saepe error voluptates provident consequatur nostrum</p>
+                        <h3>Da cozinha para a Obra de Arte</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate totam molestiae vero
+                            consectetur delectus saepe error voluptates provident consequatur nostrum</p>
                     </div>
                     <div class="wrapper">
                         <div class="item up animate">
@@ -1036,7 +1243,8 @@
                             </div>
                             <div class="text right animate">
                                 <h2>A Salada</h2>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, veniam. Veniam natus cupiditate aut similique?</p>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, veniam. Veniam
+                                    natus cupiditate aut similique?</p>
                             </div>
                         </div>
                         <div class="item right animate">
@@ -1044,8 +1252,9 @@
                                 <img src="assets/slider/food4.png" alt="">
                             </div>
                             <div class="text left animate">
-                                <h2>The Snack</h2>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, veniam. Veniam natus cupiditate aut similique?</p>
+                                <h2>O Lanche</h2>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, veniam. Veniam
+                                    natus cupiditate aut similique?</p>
                             </div>
                         </div>
                         <div class="item left animate">
@@ -1054,7 +1263,8 @@
                             </div>
                             <div class="text right animate">
                                 <h2>O Pão</h2>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, veniam. Veniam natus cupiditate aut similique?</p>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, veniam. Veniam
+                                    natus cupiditate aut similique?</p>
                             </div>
                         </div>
                         <div class="item right animate">
@@ -1063,7 +1273,8 @@
                             </div>
                             <div class="text left animate">
                                 <h2>A Delícia</h2>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, veniam. Veniam natus cupiditate aut similique?</p>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, veniam. Veniam
+                                    natus cupiditate aut similique?</p>
                             </div>
                         </div>
                     </div>
@@ -1077,7 +1288,8 @@
 
                     <div class="head-brief">
                         <h3>Do Blog</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate totam molestiae vero consectetur delectus saepe error voluptates provident consequatur nostrum</p>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate totam molestiae vero
+                            consectetur delectus saepe error voluptates provident consequatur nostrum</p>
                     </div>
                     <div class="wrapper">
                         <div class="post-list products">
@@ -1103,7 +1315,7 @@
                                     <div class="meta">
                                         <div class="catrate">
                                             <span class="cat">
-                                                <a href="#">Recipes</a>
+                                                <a href="#">Receitas</a>
                                             </span>
                                             <span class="date">Maio 10, 2022</span>
                                         </div>
@@ -1115,7 +1327,7 @@
                                         <a href="#"><img src="assets/categories/cat6.jpg" alt=""></a>
                                     </div>
                                     <div class="meta">
-                                        <div class="catrate">  
+                                        <div class="catrate">
                                             <span class="cat">
                                                 <a href="#">O Resto</a>
                                             </span>
@@ -1171,5 +1383,4 @@
     <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>

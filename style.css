@@ -437,7 +437,7 @@ main > div {
     transform: rotate(0);
 }
 .slider .tags > *:not(.price) {
-    width: 100px;
+    width: 107px;
 }
 
 
@@ -557,7 +557,7 @@ main > div {
 .products .thumbnail {
     position: relative;
     height: 200px;
-    border-radius: unset;
+    border-radius: 10px;
     margin-bottom: 1em;
     overflow: hidden;
 }
@@ -638,16 +638,16 @@ main > div {
 .tabbed nav ul li {
     width: fit-content!important;
 }
-.btn-remove {
-    padding: 0.9em 0.9em;
+.item-remove i{
+    font-size: 1.25em;
+    padding: 0.5em 0.5em;
     border-radius: 2em;
-    cursor: pointer;
     background-color: var(--light-color);
+    cursor: pointer;
 }
-.btn-remove:hover {
+.item-remove i:hover {
     background-color: var(--primary-color);
-    transition: var(--trans-back-co);
-    color:var(--white-color);
+    color: var(--white-color);
 }
 
 /*------------------------------
@@ -656,9 +656,16 @@ main > div {
 .single-cart {
     background-color: var(--white-color);
 }
+.products.cart .thumbnail img {
+    transition: none;
+}
 .products.cart .thumbnail {
-    height: 90px;
-    width: 100px;
+    width: 155px;
+    height: 100%;
+    border-radius: 0.2em;
+}
+.products.cart .thumbnail img:hover {
+    transform: none;
 }
 .products.cart .content {
     margin-left: 0.98em;
@@ -929,10 +936,10 @@ footer .copyright {
     transform: translateY(150px);
 }
 .left.animate {
-    transform: translateX(-100px);
+    transform: translateX(0px);
 }
 .right.animate {
-    transform: translateX(100px);
+    transform: translateX(0px);
 }
 :where(.up, .left, .right).animate > * {
     opacity: 0;
@@ -997,9 +1004,7 @@ footer .copyright {
       right: 0;
     }
      /*Página do carrinho*/
-    .products.cart .thumbnail:hover img {
-        transform: unset;
-    }
+    
   }
 
 
@@ -1041,10 +1046,6 @@ footer .copyright {
     .masterpiece .item:nth-child(4) {
         max-width: 80%;
         margin: 0 auto;
-    }
-    /*Página do carrinho*/
-     .products.cart .thumbnail:hover img {
-        transform: unset;
     }
     .cart-title {
         font-family: 'Times New Roman', Times, serif;
