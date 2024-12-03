@@ -101,6 +101,7 @@ const box = document.querySelectorAll(".animate");
 box.forEach((el) => {
   io.observe(el);
 });
+
 // Função para atualizar o carrinho
 function updateCart(product, action) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
