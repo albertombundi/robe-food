@@ -575,7 +575,7 @@ main {
 .tabbed nav ul {
   display: flex;
   flex-wrap: wrap;
-  padding: 1em 0;
+  padding: 0 1em;
 }
 .tabbed nav ul li {
   margin-right: 10px;
@@ -840,8 +840,8 @@ main {
 }
 .masterpiece .bg-dark,
 .formblog .bg-dark {
-  top: -350px;
-  height: 350px;
+  top: -380px;
+  height: 416px;
 }
 .masterpiece .container {
   overflow: hidden;
@@ -900,7 +900,8 @@ main {
  * 06. BLOG
 -------------------------*/
 .formblog .bg-dark {
-  top: -16em;
+  top: -297px;
+  height: 423px;
   transform: rotate(180deg);
 }
 .formblog .post-list ul,

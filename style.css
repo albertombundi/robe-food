@@ -428,6 +428,7 @@ main > div {
 
 .hero .bg-primary {
   height: 600px;
+  bottom: -3px;
 }
 
 /* slider transition*/
@@ -520,9 +521,9 @@ main > div {
   text-transform: uppercase;
 }
 .categories .bg-primary {
-  height: 300px;
+  height: 399px;
   transform: rotate(180deg);
-  bottom: -300px;
+  bottom: -396px;
 }
 
 /*------------------------
@@ -799,8 +800,8 @@ main > div {
 }
 .masterpiece .bg-dark,
 .formblog .bg-dark {
-  top: -350px;
-  height: 350px;
+  top: -399px;
+  height: 401px;
 }
 .masterpiece .container {
   overflow: hidden;
@@ -859,7 +860,7 @@ main > div {
  * 06. BLOG
 -------------------------*/
 .formblog .bg-dark {
-  top: -10em;
+  top: -11em;
   transform: rotate(180deg);
 }
 .formblog .post-list ul,
