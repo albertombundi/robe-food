@@ -603,7 +603,7 @@ main {
 .products .thumbnail {
   position: relative;
   height: 200px;
-  border-radius: 10px;
+  border-radius: 8.5px;
   margin-bottom: 1em;
   overflow: hidden;
 }

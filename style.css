@@ -644,6 +644,7 @@ main > div {
   color: var(--secondary-color);
   background-color: var(--trans-back-co);
 }
+
 .products .meta .like:hover {
   background-color: var(--dark-color);
 }
