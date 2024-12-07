@@ -426,7 +426,6 @@ main > div {
 }
 .hero .bg-primary {
   height: 600px;
-  bottom: -3px;
 }
 
 /* slider transition*/
@@ -464,12 +463,6 @@ main > div {
   padding-top: 3em;
   background-color: var(--primary-color);
 }
-.head-brief {
-  max-width: 600px;
-  text-align: center;
-  margin: 0 auto 4em;
-}
-
 .cat-item ul li {
   position: relative;
   text-align: center;
@@ -519,9 +512,9 @@ main > div {
   text-transform: uppercase;
 }
 .categories .bg-primary {
-  height: 399px;
+  height: 400px;
   transform: rotate(180deg);
-  bottom: -396px;
+  bottom: -299px;
 }
 
 /*------------------------
@@ -799,8 +792,8 @@ main > div {
 }
 .masterpiece .bg-dark,
 .formblog .bg-dark {
-  top: -399px;
-  height: 401px;
+  top: -280px;
+  height: 400px;
 }
 .masterpiece .container {
   overflow: hidden;
@@ -976,6 +969,8 @@ footer .copyright {
 :where(.up, .left, .right).animate.this > *:nth-child(6) {
   transition-delay: 1.7s;
 }
+
+
 
 
 /*-----------------------------
