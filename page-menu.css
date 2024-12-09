@@ -666,7 +666,7 @@ main > div {
   background-color: var(--primary-color);
   color: var(--dark-color);
 }
-.products .meta .like {
+.products .meta .cart-icon-page {
   font-size: 1.25em;
   width: 40px;
   height: 40px;
@@ -675,7 +675,7 @@ main > div {
   color: var(--secondary-color);
   background-color: var(--trans-back-co);
 }
-.products .meta .like:hover {
+.products .meta .cart-icon-page:hover {
   background-color: var(--dark-color);
 }
 .tabbed nav ul li {
@@ -688,12 +688,11 @@ main > div {
   background-color: var(--white-color);
 }
 .products.cart .thumbnail img {
-  transition: none;
+  transition: unset;
 }
 .products.cart .thumbnail {
   width: 155px;
   height: 100%;
-  border-radius: 0.2em;
 }
 .products.cart .thumbnail img:hover {
   transform: none;
@@ -720,8 +719,8 @@ main > div {
   padding: 2em 1em;
   text-align: center;
 }
-.products.cart table tbody td:first-child {
-  padding-left: 0;
+.products.cart table tbody:nth-child() {
+  background-color: red;
 }
 .products.cart table td :where(.content, .qty-control) {
   margin: 0;
@@ -926,7 +925,6 @@ footer .wrapper {
  *-------------------------*/
 footer {
   padding: 5em 0;
-  margin-top: -17em;
   background-color: var(--dark-color);
   color: var(--white-color);
 }
@@ -969,7 +967,7 @@ footer .socials li:nth-child(1) a {
   background-color: #4267b21a;
 }
 footer .socials li:nth-child(2) a {
-  color: #1da1f2;
+  color: #17557c;
   background-color: #1da1f21a;
 }
 footer .socials li:nth-child(3) a {
@@ -1143,11 +1141,5 @@ footer .copyright {
     font-weight: 800;
     line-height: 1;
     margin: 0 0 -1.3em;
-  }
-  .tabbed .products ul {
-    display: grid;
-    grid-gap: 4em;
-    grid-template-columns: repeat(auto-fill, minmax(218px, 1fr));
-    padding: 1em;
   }
 }

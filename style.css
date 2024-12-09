@@ -603,7 +603,7 @@ main > div {
   border: 0;
   outline: 0;
   padding: 1em;
-  width: calc(100% - 60px);
+  width: calc(100% - 50px);
   border-radius: 5px;
   background-color: var(--light-color);
   cursor: pointer;

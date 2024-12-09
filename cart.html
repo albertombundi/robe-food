@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RobeFood - Carrinho de compras</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="page-menu.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css"/>
 </head>
 
 <body>
-    <div id="page" class="site">
+    <div id="page" class="cart">
         <header>
             <div class="container">
                 <nav>
@@ -33,6 +33,12 @@
                                 <i class="ri-search-line"></i>
                                 <i class="ri-close-line"></i>
                             </a>
+                            <li class="cart-icon">
+                                <a href="cart.html" referrerpolicy="no-referrer"  class="cart-trigger">
+                                    <i class="ri-shopping-cart-line"></i>
+                                    <span id="cart-count">0</span>
+                                </a>
+                            </li>
 
                             <a href="#" class="m-trigger mobile-only">
                                 <i class="ri-menu-line"></i>
@@ -58,7 +64,7 @@
                             </ul>
                         </div>
                         <div class="page-title">
-                            <h1 class="cart-title">Carrinho de Compras</h1>
+                            <h1 class="cart-title"><i class="ri-shopping-cart-line"> </i>Carrinho de compras</h1>
                         </div>
                         <div class="products one cart">
                             <div class="flexwrap">
@@ -69,7 +75,7 @@
                                                 <tr>
                                                     <th>Ítem</th>
                                                     <th>Preço</th>
-                                                    <th>Qtd.</th>
+                                                    <th>Qtd</th>
                                                     <th>Subtotal</th>
                                                     <th></th>
                                                 </tr>
@@ -150,7 +156,7 @@
         </footer>
     </div>
     <div class="overlay"></div>
-    <script src="script.js"></script>
     <script src="cart.js"></script>
+    <script src="page-menu.js"></script>
 </body>
 </html>
