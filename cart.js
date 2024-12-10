@@ -86,9 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function renderCart() {
     cartTableBody.innerHTML = "";
     cart.forEach((product, index) => {
-      const row = document.createElement("tr");
-      row.classList.add("row");
-      row.innerHTML = `
+      const TableRow = document.createElement("tr");
+      TableRow.innerHTML = `
                 <td class="flexitem">
                     <div class="thumbnail">
                         <a href="#"><img src="${product.image}" alt=""></a>
@@ -113,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <td><a href="#" class="item-remove" data-index="${index}"><i class="ri-close-line"></i></a></td>
             `;
 
-      cartTableBody.appendChild(row);
+      cartTableBody.appendChild(TableRow);
     });
 
     updateTotalPrice();

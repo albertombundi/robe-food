@@ -692,7 +692,7 @@ main > div {
   transition: unset;
 }
 .products.cart .thumbnail {
-  width: 155px;
+  width: 150px;
   height: 100%;
 }
 .products.cart .thumbnail img:hover {
@@ -719,6 +719,9 @@ main > div {
 .products.cart table :where(th, td) {
   padding: 2em 1em;
   text-align: center;
+}
+.products.cart table tbody tr {
+  border-bottom: 2px solid var(--light-color);
 }
 .products.cart table tbody:nth-child() {
   background-color: red;
@@ -795,6 +798,9 @@ main > div {
 .cart-summary .cart-total table tr {
   display: flex;
   justify-content: space-between;
+}
+.cart-summary.styled table tbody tr {
+  border:none;
 }
 .cart-summary .cart-total td {
   font-size: 2em;
@@ -1124,6 +1130,10 @@ footer .copyright {
     font-weight: 800;
     line-height: 1;
     margin: 0 0 -1.8em;
+  }
+  .products.cart .thumbnail {
+    width: 100px;
+    height: 100%;
   }
 }
 @media screen and (min-width: 1024px) {
