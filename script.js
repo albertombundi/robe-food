@@ -128,24 +128,24 @@ sTrigger.addEventListener("click", () => {
 });
 
 //--------SLIDER
-const sliderThumb = new Swiper(".thumb-nav", {
+const sliderThumb = new Swiper('.thumb-nav', {
   spaceBetween: 10,
   slidesPerView: 3,
   slidesPerGroup: false,
   breakpoints: {
     992: {
-      direction: "vertical",
-    },
-  },
+      direction: 'vertical'
+    }
+  }
 });
 const theSlider = new Swiper(".thumb-big", {
   slidePerView: 1,
   pagination: {
-    el: ".swiper-pagination",
+    el: '.swiper-pagination',
   },
   thumbs: {
     swiper: sliderThumb,
-  },
+  }
 });
 
 //--------TABBED PRODUCTS
