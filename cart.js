@@ -170,8 +170,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 function calculateCartTotals() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const deliveryFee = 10.0; // Taxa de entrega fixa
-  const discount = 100.0; // Desconto fixo
+  const deliveryFee = 100.00; // Taxa de entrega fixa
+  const discount = 10.0; // Desconto fixo
 
   let subtotal = 0;
 
