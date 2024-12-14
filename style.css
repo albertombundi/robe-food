@@ -951,8 +951,8 @@ footer .copyright {
 /*------------------------------
  * 08. ANIMÇÃO AO FAZER O SCROLL
  *-------------------------------*/
-
- .up.animate {
+/*
+.up.animate {
   transform: translateY(150px);
 }
 .left.animate {
@@ -985,7 +985,7 @@ footer .copyright {
 :where(.up, .left, .right).animate.this > *:nth-child(6) {
   transition-delay: 1.7s;
 }
-
+*/
 
 /*-----------------------------
  * . Contato
