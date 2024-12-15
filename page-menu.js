@@ -14,6 +14,7 @@ function updateCartCount() {
   }
 }
 
+// Função para msotrar a barra de buscar
 const sTrigger = document.querySelector(".s-trigger");
 const addclass = document.querySelector(".menu");
 sTrigger.addEventListener("click", () => {
@@ -107,7 +108,8 @@ function addToCart(product) {
   updateCartCount();
   alert("Produto adicionado ao carrinho!");
 }
-// função para buscar e mostrar os resultados
+
+// Função para buscar e mostrar os resultados
 document.addEventListener("DOMContentLoaded", function () {
   const searchInput = document.querySelector('input[type="search"]');
   const searchResultsContainer = document.getElementById("search-results");
@@ -130,10 +132,31 @@ document.addEventListener("DOMContentLoaded", function () {
           const resultItem = document.createElement("div");
           resultItem.classList.add("result-item");
           resultItem.innerHTML = `
-                        <img src="${itemImage}" alt="${itemName}">
-                        <h3>${itemName}</h3>
-                        <p>Categoria: ${itemCategory}</p>
-                        <p>Preço: ${itemPrice}</p>
+
+                      <div>
+                        <a href="#">
+                            <img src="${itemImage}" alt="${itemName}">
+                        </a>
+                      </div>
+                      <div class"item-name">
+                        <h2>${itemName}</h2>
+                      </div>
+                      <div class"item-category">
+                        <span>Categoria: <strong>${itemCategory}</strong></span>
+                      </div>
+                      <div class"item-price">
+                        <span>Preço: <strong>${itemPrice}</strong></span>
+                      </div>
+                      <div class="buttons">
+                        <button data-name="${itemName}" data-price="${itemPrice}"
+                          data-image="${itemImage}">
+                          Adicionar no carrinho
+                        </button>
+                        <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
+                          <i class="ri-shopping-cart-line"></i>
+                        </a>
+                      </div>
+                        
                     `;
           searchResultsContainer.appendChild(resultItem);
         }
@@ -141,6 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
 // Função que permite mandar os item pagina cart.html
 document.addEventListener("DOMContentLoaded", function () {
   const addToCartButtons = document.querySelectorAll(".add-to-cart");

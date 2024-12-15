@@ -272,7 +272,7 @@ header nav .menu {
   width: 80%;
   padding: 2em;
   background-color: var(--primary-color);
-  z-index: 1000;
+  z-index: 1001;
 
   border-radius: 0 50% 50% 0;
   transform: translateX(-100%);
@@ -318,7 +318,7 @@ header nav .menu ul li a:hover {
     *   b. pesquisar
     ----------------------*/
 header .search {
-  background-color: var(--white-color);
+  background-color: var(--light-color);
   height: 0;
   visibility: hidden;
   transition: height 0.3s, visibility 0.3s;
@@ -338,6 +338,7 @@ header .search input {
   text-align: right;
   background-color: transparent;
 }
+
 /*estilos dos Resultados da busca*/
 #search-results {
   position: absolute;
@@ -351,20 +352,41 @@ header .search input {
 }
 
 .result-item {
-  padding: 10px;
+  padding: 2em 1em;
   border-bottom: 1px solid var(--grey-color);
+}
+.result-item, .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: column nowrap;
+}
+.result-item button {
+  font-family: inherit;
+  border: 0;
+  outline: 0;
+  padding: 1em;
+  border-radius: 5px;
+  color: var(--primary-color);
+  background-color: var(--dark-color);
+  cursor: pointer;
+  transition: var(--trans-back-co);
 }
 
 .result-item:last-child {
-  border-bottom: none;
+  border-bottom: 1px solid var(--grey-color);
+  border-radius: 10px;
 }
 
 .result-item img {
-  max-width: 250px;
-  max-height: 250px;
-  margin-right: 100px;
+  border-radius: 10px;
+  max-width: 300px;
+  max-height: 300px;
+  margin-right: 10px;
 }
-
+.result-item .item-name {
+  padding: 10px;
+}
 .result-item .content {
   display: inline-block;
   vertical-align: top;
@@ -498,7 +520,7 @@ main > div {
 .hero {
   color: var(--white-color);
   text-align: center;
-  top: 4em;
+  top: 3em;
 }
 .hero .bg-dark {
   height: 295px;
@@ -694,11 +716,11 @@ main > div {
   cursor: pointer;
   transition: var(--trans-back-co);
 }
-.products .meta button:hover {
+.result-item button:hover, .products .meta button:hover {
   background-color: var(--primary-color);
   color: var(--dark-color);
 }
-.products .meta .cart-icon-page {
+.result-item :where(.cart-icon-page), .products .meta .cart-icon-page {
   font-size: 1.25em;
   width: 40px;
   height: 40px;
@@ -1141,6 +1163,23 @@ footer .copyright {
     font-weight: 800;
     line-height: 1;
     margin: 0 0 -1.6em;
+  }
+  .result-item, .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+  }
+  .hero {
+    color: var(--white-color);
+    text-align: center;
+    top: 4em;
+  }
+  .result-item img {
+    border-radius: 10px;
+    max-width: 150px;
+    max-height: 150px;
+    margin-right: 10px;
   }
 }
 
