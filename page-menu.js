@@ -131,32 +131,22 @@ document.addEventListener("DOMContentLoaded", function () {
         if (itemName.includes(query) || itemCategory.includes(query)) {
           const resultItem = document.createElement("div");
           resultItem.classList.add("result-item");
-          resultItem.innerHTML = `
-
-                      <div>
-                        <a href="#">
-                            <img src="${itemImage}" alt="${itemName}">
-                        </a>
-                      </div>
-                      <div class"item-name">
-                        <h2>${itemName}</h2>
-                      </div>
-                      <div class"item-category">
-                        <span>Categoria: <strong>${itemCategory}</strong></span>
-                      </div>
-                      <div class"item-price">
-                        <span>Preço: <strong>${itemPrice}</strong></span>
-                      </div>
-                      <div class="buttons">
-                        <button data-name="${itemName}" data-price="${itemPrice}"
+          resultItem.innerHTML = 
+                    `
+                      <a href="#">
+                          <img src="${itemImage}" alt="${itemName}">
+                      </a>
+                      <h2>${itemName}</h2>
+                      <span>Categoria: <strong>${itemCategory}</strong></span>
+                      <span>Preço: <strong>${itemPrice}</strong></span>
+                      <div clas="buttons">
+                        <button data-name="${itemName}"
+                          data-price="${itemPrice}"
                           data-image="${itemImage}">
                           Adicionar no carrinho
                         </button>
-                        <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-                          <i class="ri-shopping-cart-line"></i>
-                        </a>
                       </div>
-                        
+
                     `;
           searchResultsContainer.appendChild(resultItem);
         }

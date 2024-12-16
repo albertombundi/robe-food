@@ -318,7 +318,7 @@ header nav .menu ul li a:hover {
     *   b. pesquisar
     ----------------------*/
 header .search {
-  background-color: var(--light-color);
+  background-color: var(--white-color);
   height: 0;
   visibility: hidden;
   transition: height 0.3s, visibility 0.3s;
@@ -345,21 +345,23 @@ header .search input {
   top: 100%;
   left: 0;
   right: 0;
-  background-color: var(--light-color);
+  background-color: var(--white-color);
   max-height: 300px;
   overflow-y: auto;
   z-index: 1000;
 }
-
 .result-item {
-  padding: 2em 1em;
-  border-bottom: 1px solid var(--grey-color);
-}
-.result-item, .buttons {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: start;
+  justify-content: center;
   flex-flow: column nowrap;
+  padding: 1em;
+}
+
+.buttons {
+  display: flex;
+  justify-content: start;
+  align-items: start;
 }
 .result-item button {
   font-family: inherit;
@@ -372,26 +374,24 @@ header .search input {
   cursor: pointer;
   transition: var(--trans-back-co);
 }
-
 .result-item:last-child {
-  border-bottom: 1px solid var(--grey-color);
-  border-radius: 10px;
+  border-bottom: none;
 }
-
 .result-item img {
   border-radius: 10px;
   max-width: 300px;
-  max-height: 300px;
+  max-height: 200px;
   margin-right: 10px;
 }
 .result-item .item-name {
-  padding: 10px;
+  background-color: red;
 }
-.result-item .content {
-  display: inline-block;
-  vertical-align: top;
+.result-item .item-category {
+  background-color: green;
 }
-
+.result-item .item-price {
+  background-color: blue;
+}
 header .search input::placeholder {
   color: var(--dark-color);
 }
@@ -1164,12 +1164,6 @@ footer .copyright {
     line-height: 1;
     margin: 0 0 -1.6em;
   }
-  .result-item, .buttons {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-flow: row nowrap;
-  }
   .hero {
     color: var(--white-color);
     text-align: center;
@@ -1180,6 +1174,12 @@ footer .copyright {
     max-width: 150px;
     max-height: 150px;
     margin-right: 10px;
+  }
+  .result-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row nowrap;
   }
 }
 
