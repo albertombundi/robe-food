@@ -133,18 +133,24 @@ document.addEventListener("DOMContentLoaded", function () {
           resultItem.classList.add("result-item");
           resultItem.innerHTML = 
                     `
-                      <a href="#">
-                          <img src="${itemImage}" alt="${itemName}">
-                      </a>
-                      <h2>${itemName}</h2>
-                      <span>Categoria: <strong>${itemCategory}</strong></span>
-                      <span>Preço: <strong>${itemPrice}</strong></span>
-                      <div clas="buttons">
-                        <button data-name="${itemName}"
-                          data-price="${itemPrice}"
-                          data-image="${itemImage}">
-                          Adicionar no carrinho
-                        </button>
+                      <div class="thumbnail-img">
+                        <a href="#">
+                            <img src="${itemImage}" alt="${itemName}">
+                        </a>
+                      </div>
+                      <div class="content">
+                        <h2 class="item_name">${itemName}</h2>
+                          <div class="item_category">
+                            <span>Categoria: <strong>${itemCategory}</strong></span>
+                          </div>
+                          <div class="item_price"><span>Preço: <strong>${itemPrice}</strong></span></div>
+                        <div class="buttons">
+                          <button data-name="${itemName}"
+                            data-price="${itemPrice}"
+                            data-image="${itemImage}">
+                            Adicionar no carrinho
+                          </button>
+                        </div>
                       </div>
 
                     `;

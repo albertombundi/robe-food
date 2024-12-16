@@ -69,7 +69,7 @@ h4 {
 
 .tabbed-container {
   width: 100%;
-  padding: 0 2em;
+  padding: 0 0.5em;
   margin: 0 auto;
 }
 .fromblog-container {
@@ -350,19 +350,17 @@ header .search input {
   overflow-y: auto;
   z-index: 1000;
 }
-.result-item {
+.result-item .content {
   display: flex;
-  align-items: start;
   justify-content: center;
-  flex-flow: column nowrap;
-  padding: 1em;
+  flex-flow: column wrap;
+  padding: 2em 1em;
+  border-bottom: 1px dashed var(--light-color);
+}
+.result-item .buttons {
+  padding: 1em 0;
 }
 
-.buttons {
-  display: flex;
-  justify-content: start;
-  align-items: start;
-}
 .result-item button {
   font-family: inherit;
   border: 0;
@@ -377,20 +375,20 @@ header .search input {
 .result-item:last-child {
   border-bottom: none;
 }
+.result-item .thumbnail-img {
+  display: block;
+  padding: 1em 1em 0;
+}
+
+.result-item .item_category {
+  padding:0.5em 0;
+  
+}
 .result-item img {
   border-radius: 10px;
-  max-width: 300px;
+  max-width: 200px;
   max-height: 200px;
   margin-right: 10px;
-}
-.result-item .item-name {
-  background-color: red;
-}
-.result-item .item-category {
-  background-color: green;
-}
-.result-item .item-price {
-  background-color: blue;
 }
 header .search input::placeholder {
   color: var(--dark-color);
@@ -1116,6 +1114,13 @@ footer .copyright {
     top: 0;
     right: 0;
   }
+  .result-item .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    padding: 1em 1em;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -1167,19 +1172,33 @@ footer .copyright {
   .hero {
     color: var(--white-color);
     text-align: center;
-    top: 4em;
+    top: 3em;
   }
   .result-item img {
     border-radius: 10px;
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 200px;
+    max-height: 200px;
     margin-right: 10px;
   }
-  .result-item {
+  .result-item .content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
+    padding: 2em 1em;
+  }
+  .result-item .buttons {
+    padding: 1em 0;
+  }
+  .result-item .item_category {
+    font-size: 1em;
+    padding:0 1em;
+    
+  }
+  .result-item .item_price {
+    font-size: 1em;
+    padding:0 1em;
+  
   }
 }
 
