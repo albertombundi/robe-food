@@ -2,7 +2,7 @@ window.addEventListener("storage", function (e) {
   if (e.key === "cart") {
     calculateCartTotals();
   }
-});// Chama esta função quando a página carregar
+}); // Chama esta função quando a página carregar
 document.addEventListener("DOMContentLoaded", updateCartCount);
 const divtoShow = "nav .menu";
 const divPopup = document.querySelector(divtoShow);
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 function calculateCartTotals() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const deliveryFee = 100.00; // Taxa de entrega fixa
+  const deliveryFee = 100.0; // Taxa de entrega fixa
   const discount = 10.0; // Desconto fixo
 
   let subtotal = 0;
@@ -199,3 +199,37 @@ function calculateCartTotals() {
 
 // Chama a função quando a página carregar
 document.addEventListener("DOMContentLoaded", calculateCartTotals);
+document.addEventListener("DOMContentLoaded", function () {
+  // Código existente para carregar o carrinho...
+
+  // Adicione este código para atualizar os preços em tempo real
+  const quantityInputs = document.querySelectorAll(".quantity-input");
+  quantityInputs.forEach((input) => {
+    input.addEventListener("change", updateItemPrice);
+  });
+
+  function updateItemPrice(event) {
+    const input = event.target;
+    const quantity = parseInt(input.value);
+    const itemRow = input.closest("tr");
+    const pricePerItem = parseFloat(
+      itemRow.querySelector(".price").textContent.replace("$", "")
+    );
+    const totalPriceElement = itemRow.querySelector(".total-price");
+
+    const totalPrice = quantity * pricePerItem;
+    totalPriceElement.textContent = "$" + totalPrice.toFixed(2);
+
+    updateCartTotal();
+  }
+
+  function updateCartTotal() {
+    const totalPrices = document.querySelectorAll(".total-price");
+    let cartTotal = 0;
+    totalPrices.forEach((price) => {
+      cartTotal += parseFloat(price.textContent.replace("$", ""));
+    });
+    document.getElementById("cart-total").textContent =
+      "$" + cartTotal.toFixed(2);
+  }
+});
