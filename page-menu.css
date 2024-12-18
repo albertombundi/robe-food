@@ -338,17 +338,66 @@ header .search input {
   text-align: right;
   background-color: transparent;
 }
+header .search input {
+  width: 100%;
+  line-height: 60px;
+  outline: 0;
+  border: 0;
+  font-family: inherit;
+  font-size: 1.5em;
+  font-weight: 300;
+  text-align: right;
+  background-color: transparent;
+}
+header .search input::placeholder {
+  color: var(--dark-color);
+}
+header .s-trigger i.ri-close-line, 
+.showsearch header .s-trigger i.ri-search-line {
+  display: none;
+}
+.showsearch header .s-trigger i.ri-close-line {
+  display: block;
+}
+.showsearch header .s-trigger {
+  background-color: #ff25251a;
+  color: var(--secondary-color);
+  border-radius: 7px;
+  transition: var(--trans-back-co);
+}
+.showsearch header .s-trigger:hover {
+  background-color: #ff25254a;
+}
+header .search input::placeholder {
+  color: var(--dark-color);
+}
+header .s-trigger i.ri-close-line,
+.showsearch header .s-trigger .ri-search-line {
+  display: none;
+}
+.showsearch header .s-trigger i.ri-close-line {
+  display: block;
+}
+.showsearch header .s-trigger {
+  background-color: #ff25251a;
+  color: var(--secondary-color);
+  border-radius: 7px;
+  transition: var(--trans-back-co);
+}
+.showsearch header .s-trigger:hover {
+  background-color: #ff25254a;
+}
 
 /* 
-  ____Estilos dos Resultados da busca_______
+  ____Estilos Resultados da busca_______
 */
 #search-results {
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   max-height: 300px;
   background-color: var(--light-color);
   overflow-y:hidden;
@@ -394,25 +443,6 @@ header .search input {
   max-width: 200px;
   max-height: 118px;
   margin-right: 10px;
-}
-header .search input::placeholder {
-  color: var(--dark-color);
-}
-header .s-trigger i.ri-close-line,
-.showsearch header .s-trigger .ri-search-line {
-  display: none;
-}
-.showsearch header .s-trigger i.ri-close-line {
-  display: block;
-}
-.showsearch header .s-trigger {
-  background-color: #ff25251a;
-  color: var(--secondary-color);
-  border-radius: 7px;
-  transition: var(--trans-back-co);
-}
-.showsearch header .s-trigger:hover {
-  background-color: #ff25254a;
 }
 
 /*---------------
@@ -464,7 +494,6 @@ main > div {
 .slider .tags a {
   color: var(--primary-color);
 }
-
 .link-slide a::after {
   content: "";
   width: 34px;

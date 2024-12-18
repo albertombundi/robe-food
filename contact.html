@@ -55,11 +55,6 @@
                     </div>
                 </nav>
             </div>
-            <form action="" class="search">
-                <div class="container">
-                    <input type="search" placeholder="Procure para comer...">
-                </div>
-            </form>
         </header>
         <main>
             <div class="contact">
@@ -79,12 +74,12 @@
                             </p>
                             <p>
                                 <label>Assunto</label>
-                                <input type="text" placeholder="Tópico acima para discotir?">
+                                <input type="text" placeholder="Tópico acima para descotir?">
                             </p>
                             <p>
                                 <label>Mensagem</label>
                                 <textarea cols="30" rows="10"
-                                    placeholder="Escreva a sua mensagem aqui.."></textarea>
+                                    placeholder="Escreva a sua mensagem aqui..."></textarea>
                             </p>
                             <p>
                                 <button class="primary-button">Enviar</button>
@@ -157,6 +152,48 @@
     </div>
     <div class="overlay"></div>
     <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script>
+        // Chama esta função quando a página carregar
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+        const divtoShow = "nav .menu";
+        const divPopup = document.querySelector(divtoShow);
+        const divTrigger = document.querySelector(".m-trigger");
+
+        divTrigger.addEventListener("click", () => {
+        setTimeout(() => {
+            if (!divPopup.classList.contains("show")) {
+            divPopup.classList.add("show");
+            document.body.classList.add("menu-visible");
+            }
+        }, 250);
+        });
+
+        //---Fecha automaticamente ao clicar fora dele
+        document.addEventListener("click", (e) => {
+        const isClosest = e.target.closest(divtoShow);
+
+        if (!isClosest && divPopup.classList.contains("show")) {
+            divPopup.classList.remove("show");
+            document.body.classList.remove("menu-visible");
+        }
+        });
+
+        // função que atualiza a contagem dos produtos em tempo real
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            const cartCountElement = document.getElementById('cart-count');
+
+            if (cartCountElement) {
+                cartCountElement.textContent = count;
+
+                // Adiciona a animação
+                cartCountElement.classList.add('pulse');
+                setTimeout(() => {
+                    cartCountElement.classList.remove('pulse');
+                }, 300);
+            }
+        }
+    </script>
 </body>
 </html>

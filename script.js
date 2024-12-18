@@ -179,3 +179,55 @@ box.forEach((el) => {
 });
 
 
+
+// Função para buscar e mostrar os resultados
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.querySelector('input[type="search"]');
+  const searchResultsContainer = document.getElementById("search-results");
+  const items = document.querySelectorAll(".item");
+
+  searchInput.addEventListener("input", function () {
+      const query = searchInput.value.toLowerCase();
+      searchResultsContainer.innerHTML = ""; // Limpa os resultados anteriores
+
+      if (query) {
+          items.forEach((item) => {
+          const itemName = item.querySelector("h2 a").textContent.toLowerCase();
+          const itemCategory = item
+          .querySelector(".cat a").textContent.toLowerCase();
+          const itemImage = item.querySelector("img").src;
+          const itemPrice = item.querySelector(".price .current").textContent;
+
+              if (itemName.includes(query) || itemCategory.includes(query)) {
+                  const resultItem = document.createElement("div");
+                  resultItem.classList.add("result-item");
+                  resultItem.innerHTML = 
+                          `
+                          <div class="thumbnail-img">
+                              <a href="#">
+                                  <img src="${itemImage}" alt="${itemName}">
+                              </a>
+                          </div>
+                          <div class="content">
+                              <h2 class="item_name">${itemName}</h2>
+                              <div class="item_category">
+                                  <span>Categoria: <strong>${itemCategory}</strong></span>
+                              </div>
+                              <div class="item_price"><span>Preço: <strong>${itemPrice}</strong></span></div>
+                              <div class="buttons">
+                              <button data-name="${itemName}"
+                                  data-price="${itemPrice}"
+                                  data-image="${itemImage}">
+                                  Adicionar no carrinho
+                              </button>
+                              </div>
+                          </div>
+
+                          `;
+                  searchResultsContainer.appendChild(resultItem);
+              }
+          });
+      }
+  });
+});
+
