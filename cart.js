@@ -72,11 +72,6 @@ function updateCart(product, action) {
   return cart;
 }
 
-const sTrigger = document.querySelector(".s-trigger");
-const addclass = document.querySelector(".cart");
-sTrigger.addEventListener("click", () => {
-  addclass.classList.toggle("showsearch");
-});
 
 // Função que recebe os itens a partir do page-menu e exibe os produtos dentro do corpo da tabela do cart (tbody)
 document.addEventListener("DOMContentLoaded", function () {

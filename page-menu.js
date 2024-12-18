@@ -14,7 +14,7 @@ function updateCartCount() {
   }
 }
 
-// Função para msotrar a barra de buscar
+// Função para mostrar a barra de buscar
 const sTrigger = document.querySelector(".s-trigger");
 const addclass = document.querySelector(".menu");
 sTrigger.addEventListener("click", () => {
