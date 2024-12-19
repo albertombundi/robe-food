@@ -186,51 +186,48 @@ box.forEach((el) => {
 
 
 
-
-
-
 // Função de buscar e mostrar resulatdos front-end
 
 // Lista de itens com URLs adicionadas
 const items = [
   { 
       id: 1, 
-      name: "Pizza de Calabresa", 
-      category: "Pizzas", 
+      name: "Pastelaria é bom", 
+      category: "Assados no forno", 
       price: 45.00, 
-      image: "https://example.com/pizza-calabresa.jpg",
+      image: "assets/products/baked1.jpg.jpg",
       url: "produto.html?id=1" 
   },
   { 
       id: 2, 
-      name: "Hambúrguer Gourmet", 
-      category: "Lanches", 
+      name: "Pastelaria lorem upsum dolor", 
+      category: "Assados no forno", 
       price: 25.00, 
-      image: "https://example.com/hamburguer-gourmet.jpg",
+      image: "assets/products/baked2.jpg",
       url: "produto.html?id=2" 
   },
   { 
       id: 3, 
-      name: "Sushi Variado", 
-      category: "Sushi", 
+      name: "Dolor Cupcakes", 
+      category: "Assados no forno", 
       price: 80.00, 
-      image: "https://example.com/sushi-variado.jpg",
+      image: "assets/products/baked3.jpg",
       url: "produto.html?id=3" 
   },
   { 
       id: 4, 
-      name: "Lasanha à Bolonhesa", 
-      category: "Massas", 
+      name: "Dolor Cupcakes", 
+      category: "Assados no forno", 
       price: 50.00, 
-      image: "https://example.com/lasanha-bolonhesa.jpg",
+      image: "assets/products/baked4.jpg",
       url: "produto.html?id=4" 
   },
   { 
       id: 5, 
-      name: "Salada Caesar", 
-      category: "Saladas", 
+      name: "Dolor Cupcakes", 
+      category: "Assados no forno", 
       price: 20.00, 
-      image: "https://example.com/salada-caesar.jpg",
+      image: "assets/products/baked5.jpg",
       url: "produto.html?id=5" 
   },
 ];
