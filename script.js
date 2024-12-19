@@ -189,7 +189,7 @@ box.forEach((el) => {
 
 
 
-
+// Função de buscar e mostrar resulatdos front-end
 
 // Lista de itens com URLs adicionadas
 const items = [
@@ -278,7 +278,7 @@ function showSearchResults(query) {
           category.textContent = `Categoria: ${item.category}`;
 
           const price = document.createElement("p");
-          price.textContent = `Preço: R$ ${item.price.toFixed(2)}`;
+          price.textContent = `Preço: $ ${item.price.toFixed(2)}`;
 
           // Adiciona redirecionamento ao clicar no item
           itemContainer.addEventListener("click", () => {
