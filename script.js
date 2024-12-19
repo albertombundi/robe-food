@@ -1,60 +1,60 @@
 // função para atualizar a contagem dos produtos em tempo real
 function updateCartCount() {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const count = cart.reduce((total, item) => total + item.quantity, 0);
-  const cartCountElement = document.getElementById('cart-count');
+  const cartCountElement = document.getElementById("cart-count");
 
   if (cartCountElement) {
-      cartCountElement.textContent = count;
+    cartCountElement.textContent = count;
 
-      // Adiciona a animação
-      cartCountElement.classList.add('pulse');
-      setTimeout(() => {
-          cartCountElement.classList.remove('pulse');
-      }, 300);
+    // Adiciona a animação
+    cartCountElement.classList.add("pulse");
+    setTimeout(() => {
+      cartCountElement.classList.remove("pulse");
+    }, 300);
   }
 }
 
-
 // Adicione um listener para mudanças no localStorage
-window.addEventListener('storage', function(e) {
-    if (e.key === 'cart') {
-        updateCartCount();
-    }
+window.addEventListener("storage", function (e) {
+  if (e.key === "cart") {
+    updateCartCount();
+  }
 });
-
 
 function updateCart(product, action) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const existingProductIndex = cart.findIndex(item => item.name === product.name);
+  const existingProductIndex = cart.findIndex(
+    (item) => item.name === product.name
+  );
   if (existingProductIndex !== -1) {
-      if (action === 'remove') {
+    if (action === "remove") {
       cart[existingProductIndex].quantity -= 1;
       if (cart[existingProductIndex].quantity <= 0) {
-          cart.splice(existingProductIndex, 1);
+        cart.splice(existingProductIndex, 1);
       }
-      } else if (action === 'add') {
+    } else if (action === "add") {
       cart[existingProductIndex].quantity += 1;
-      }
-  } else if (action === 'add') {
-      product.quantity = 1;
-      cart.push(product);
+    }
+  } else if (action === "add") {
+    product.quantity = 1;
+    cart.push(product);
   }
-  
-  localStorage.setItem("cart", JSON.stringify(cart));
-    return cart;
-}
 
+  localStorage.setItem("cart", JSON.stringify(cart));
+  return cart;
+}
 
 // Event listener para os botões "Adicionar no carrinho"
 document.querySelectorAll(".buttons button").forEach((button) => {
   button.addEventListener("click", function () {
     const productElement = this.closest(".item");
     const product = {
-    name: productElement.querySelector("h2 a").textContent,
-    image: productElement.querySelector(".thumbnail img").src,
-    description: productElement.querySelector(".meta .catrate .cat a").textContent,
-    price: productElement.querySelector(".price .current").textContent,
+      name: productElement.querySelector("h2 a").textContent,
+      image: productElement.querySelector(".thumbnail img").src,
+      description: productElement.querySelector(".meta .catrate .cat a")
+        .textContent,
+      price: productElement.querySelector(".price .current").textContent,
     };
     addToCart(product);
   });
@@ -62,42 +62,42 @@ document.querySelectorAll(".buttons button").forEach((button) => {
 
 // Função para adicionar item ao carrinho
 function addToCart(product) {
-  updateCart(product, 'add');
+  updateCart(product, "add");
   updateCartCount(); // Adicione esta linha
   alert("Produto adicionado ao carrinho!");
 }
 
-
 // Função que permite mandar os item pagina cart.html
-document.addEventListener('DOMContentLoaded', function () {
-const addToCartButtons = document.querySelectorAll('.add-to-cart');
-  addToCartButtons.forEach(button => {
-      button.addEventListener('click', function () {
-          const product = {
-              name: this.dataset.name,
-              price: this.dataset.price,
-              image: this.dataset.image,
-              quantity: 1
-          };
+document.addEventListener("DOMContentLoaded", function () {
+  const addToCartButtons = document.querySelectorAll(".add-to-cart");
+  addToCartButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const product = {
+        name: this.dataset.name,
+        price: this.dataset.price,
+        image: this.dataset.image,
+        quantity: 1,
+      };
 
-          let cart = JSON.parse(localStorage.getItem('cart')) || [];
-          const existingProductIndex = cart.findIndex(item => item.name === product.name);
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existingProductIndex = cart.findIndex(
+        (item) => item.name === product.name
+      );
 
-          if (existingProductIndex !== -1) {
-              cart[existingProductIndex].quantity += 1;
-          } else {
-              cart.push(product);
-          }
+      if (existingProductIndex !== -1) {
+        cart[existingProductIndex].quantity += 1;
+      } else {
+        cart.push(product);
+      }
 
-          localStorage.setItem('cart', JSON.stringify(cart));
-          alert('Produto adicionado ao carrinho!');
-      });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Produto adicionado ao carrinho!");
+    });
   });
 });
 
-
 // Chama esta função quando a página carregar
-document.addEventListener('DOMContentLoaded', updateCartCount);
+document.addEventListener("DOMContentLoaded", updateCartCount);
 const divtoShow = "nav .menu";
 const divPopup = document.querySelector(divtoShow);
 const divTrigger = document.querySelector(".m-trigger");
@@ -128,24 +128,24 @@ sTrigger.addEventListener("click", () => {
 });
 
 //--------SLIDER
-const sliderThumb = new Swiper('.thumb-nav', {
+const sliderThumb = new Swiper(".thumb-nav", {
   spaceBetween: 10,
   slidesPerView: 3,
   slidesPerGroup: false,
   breakpoints: {
     992: {
-      direction: 'vertical'
-    }
-  }
+      direction: "vertical",
+    },
+  },
 });
 const theSlider = new Swiper(".thumb-big", {
   slidePerView: 1,
   pagination: {
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
   },
   thumbs: {
     swiper: sliderThumb,
-  }
+  },
 });
 
 //--------TABBED PRODUCTS
@@ -180,54 +180,175 @@ box.forEach((el) => {
 
 
 
-// Função para buscar e mostrar os resultados
-document.addEventListener("DOMContentLoaded", function () {
-  const searchInput = document.querySelector('input[type="search"]');
-  const searchResultsContainer = document.getElementById("search-results");
-  const items = document.querySelectorAll(".item");
 
-  searchInput.addEventListener("input", function () {
-      const query = searchInput.value.toLowerCase();
-      searchResultsContainer.innerHTML = ""; // Limpa os resultados anteriores
 
-      if (query) {
-          items.forEach((item) => {
-          const itemName = item.querySelector("h2 a").textContent.toLowerCase();
-          const itemCategory = item
-          .querySelector(".cat a").textContent.toLowerCase();
-          const itemImage = item.querySelector("img").src;
-          const itemPrice = item.querySelector(".price .current").textContent;
 
-              if (itemName.includes(query) || itemCategory.includes(query)) {
-                  const resultItem = document.createElement("div");
-                  resultItem.classList.add("result-item");
-                  resultItem.innerHTML = 
-                          `
-                          <div class="thumbnail-img">
-                              <a href="#">
-                                  <img src="${itemImage}" alt="${itemName}">
-                              </a>
-                          </div>
-                          <div class="content">
-                              <h2 class="item_name">${itemName}</h2>
-                              <div class="item_category">
-                                  <span>Categoria: <strong>${itemCategory}</strong></span>
-                              </div>
-                              <div class="item_price"><span>Preço: <strong>${itemPrice}</strong></span></div>
-                              <div class="buttons">
-                              <button data-name="${itemName}"
-                                  data-price="${itemPrice}"
-                                  data-image="${itemImage}">
-                                  Adicionar no carrinho
-                              </button>
-                              </div>
-                          </div>
 
-                          `;
-                  searchResultsContainer.appendChild(resultItem);
-              }
+
+
+
+
+
+
+
+// Lista de itens com URLs adicionadas
+const items = [
+  { 
+      id: 1, 
+      name: "Pizza de Calabresa", 
+      category: "Pizzas", 
+      price: 45.00, 
+      image: "https://example.com/pizza-calabresa.jpg",
+      url: "produto.html?id=1" 
+  },
+  { 
+      id: 2, 
+      name: "Hambúrguer Gourmet", 
+      category: "Lanches", 
+      price: 25.00, 
+      image: "https://example.com/hamburguer-gourmet.jpg",
+      url: "produto.html?id=2" 
+  },
+  { 
+      id: 3, 
+      name: "Sushi Variado", 
+      category: "Sushi", 
+      price: 80.00, 
+      image: "https://example.com/sushi-variado.jpg",
+      url: "produto.html?id=3" 
+  },
+  { 
+      id: 4, 
+      name: "Lasanha à Bolonhesa", 
+      category: "Massas", 
+      price: 50.00, 
+      image: "https://example.com/lasanha-bolonhesa.jpg",
+      url: "produto.html?id=4" 
+  },
+  { 
+      id: 5, 
+      name: "Salada Caesar", 
+      category: "Saladas", 
+      price: 20.00, 
+      image: "https://example.com/salada-caesar.jpg",
+      url: "produto.html?id=5" 
+  },
+];
+
+// Elementos do DOM
+const searchInput = document.getElementById("search-input");
+const resultsContainer = document.createElement("div");
+resultsContainer.classList.add("search-results");
+
+// Adiciona o container de resultados ao formulário
+document.querySelector("form.search").appendChild(resultsContainer);
+
+// Função para mostrar os resultados
+function showSearchResults(query) {
+  resultsContainer.innerHTML = ""; // Limpa resultados anteriores
+
+  if (!query.trim()) {
+      resultsContainer.style.display = "none"; // Esconde se vazio
+      return;
+  }
+
+  // Filtra itens com base no texto digitado
+  const filteredItems = items.filter(item =>
+      item.name.toLowerCase().includes(query.toLowerCase())
+  );
+
+  if (filteredItems.length === 0) {
+      resultsContainer.innerHTML = "<p>Nenhum resultado encontrado.</p>";
+  } else {
+      // Gera resultados com detalhes
+      const list = document.createElement("div");
+      list.classList.add("item-list");
+      filteredItems.forEach(item => {
+          const itemContainer = document.createElement("div");
+          itemContainer.classList.add("item");
+
+          const image = document.createElement("img");
+          image.src = item.image;
+          image.alt = item.name;
+
+          const name = document.createElement("h4");
+          name.textContent = item.name;
+
+          const category = document.createElement("p");
+          category.textContent = `Categoria: ${item.category}`;
+
+          const price = document.createElement("p");
+          price.textContent = `Preço: R$ ${item.price.toFixed(2)}`;
+
+          // Adiciona redirecionamento ao clicar no item
+          itemContainer.addEventListener("click", () => {
+              window.location.href = item.url;
           });
-      }
-  });
+
+          itemContainer.appendChild(image);
+          itemContainer.appendChild(name);
+          itemContainer.appendChild(category);
+          itemContainer.appendChild(price);
+
+          list.appendChild(itemContainer);
+      });
+      resultsContainer.appendChild(list);
+  }
+
+  resultsContainer.style.display = "block"; // Mostra resultados
+}
+
+// Evento para capturar entrada de texto
+searchInput.addEventListener("input", (event) => {
+  const query = event.target.value;
+  showSearchResults(query);
 });
 
+// Estilo básico para exibição
+const style = document.createElement("style");
+style.textContent = `
+  .search-results {
+      position: absolute;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 100%;
+      max-height: 300px;
+      overflow-y: auto;
+      z-index: 1000;
+      display: none;
+  }
+  .search-results .item-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+  .search-results .item {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      padding: 10px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+  }
+  .search-results .item:hover {
+      background: #f0f0f0;
+  }
+  .search-results .item img {
+      width: 50px;
+      height: 50px;
+      border-radius: 5px;
+      object-fit: cover;
+  }
+  .search-results .item h4 {
+      margin: 0;
+      font-size: 16px;
+  }
+  .search-results .item p {
+      margin: 0;
+      font-size: 14px;
+      color: #555;
+  }
+`;
+document.head.appendChild(style);

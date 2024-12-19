@@ -331,59 +331,7 @@ header .s-trigger i.ri-close-line,
 /* 
   ____Estilo do Resultados da busca_______
 */
-#search-results {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  max-height: 300px;
-  background-color: var(--primary-color);
-  overflow-y:hidden;
-  z-index: 1000;
-  box-shadow: 0 30px 26px -8px rgb(0 0 0 / 25%);
-  transition: height 0.3s, visibility 0.3s;
-}
-.result-item .content {
-  display: flex;
-  justify-content: center;
-  flex-flow: column wrap;
-  padding: 2em 1em;
-  border-bottom: 1px solid var(--light-color);
-}
-.result-item .buttons {
-  padding: 1em 0;
-}
-.result-item button {
-  font-family: inherit;
-  border: 0;
-  outline: 0;
-  padding: 1em;
-  border-radius: 5px;
-  color: var(--primary-color);
-  background-color: var(--dark-color);
-  cursor: pointer;
-  transition: var(--trans-back-co);
-}
-.result-item:last-child {
-  border-bottom: none;
-}
-.result-item .thumbnail-img {
-  display: block;
-  padding: 1em 1em 0;
-}
 
-.result-item .item_category {
-  padding:0.5em 0;
-  
-}
-.result-item img {
-  border-radius: 10px;
-  max-width: 200px;
-  max-height: 118px;
-  margin-right: 10px;
-}
 
 /*---------------
  * 02. SLIDER
