@@ -184,10 +184,6 @@ box.forEach((el) => {
 
 
 
-
-
-// Função de buscar e mostrar resulatdos front-end
-
 // Lista de itens com URLs adicionadas
 const items = [
   { 
@@ -195,50 +191,46 @@ const items = [
       name: "Pastelaria é bom", 
       category: "Assados no forno", 
       price: 45.00, 
-      image: "assets/products/baked1.jpg.jpg",
-      url: "produto.html?id=1" 
+      image: "./assets/products/baked1.jpg",
+      url: "./page-menu.html?id=1" 
   },
   { 
       id: 2, 
       name: "Pastelaria lorem upsum dolor", 
       category: "Assados no forno", 
       price: 25.00, 
-      image: "assets/products/baked2.jpg",
-      url: "produto.html?id=2" 
+      image: "./assets/products/baked2.jpg",
+      url: "./page-menu.html?id=2" 
   },
   { 
       id: 3, 
       name: "Dolor Cupcakes", 
       category: "Assados no forno", 
       price: 80.00, 
-      image: "assets/products/baked3.jpg",
-      url: "produto.html?id=3" 
+      image: "./assets/products/baked3.jpg",
+      url: "./page-menu.html?id=3" 
   },
   { 
       id: 4, 
       name: "Dolor Cupcakes", 
       category: "Assados no forno", 
       price: 50.00, 
-      image: "assets/products/baked4.jpg",
-      url: "produto.html?id=4" 
+      image: "./assets/products/baked4.jpg",
+      url: "./page-menu.html?id=4" 
   },
   { 
       id: 5, 
       name: "Dolor Cupcakes", 
       category: "Assados no forno", 
       price: 20.00, 
-      image: "assets/products/baked5.jpg",
-      url: "produto.html?id=5" 
+      image: "./assets/products/baked5.jpg",
+      url: "./page-menu.html?id=5" 
   },
 ];
 
 // Elementos do DOM
 const searchInput = document.getElementById("search-input");
-const resultsContainer = document.createElement("div");
-resultsContainer.classList.add("search-results");
-
-// Adiciona o container de resultados ao formulário
-document.querySelector("form.search").appendChild(resultsContainer);
+const resultsContainer = document.getElementById("search-results");
 
 // Função para mostrar os resultados
 function showSearchResults(query) {
@@ -290,6 +282,16 @@ function showSearchResults(query) {
           list.appendChild(itemContainer);
       });
       resultsContainer.appendChild(list);
+
+      // Adicionar eventos para os itens criados
+      document.querySelectorAll('.search-results .item').forEach((item) => {
+          item.addEventListener('mouseenter', () => {
+              item.classList.add('active');
+          });
+          item.addEventListener('mouseleave', () => {
+              item.classList.remove('active');
+          });
+      });
   }
 
   resultsContainer.style.display = "block"; // Mostra resultados
@@ -301,51 +303,27 @@ searchInput.addEventListener("input", (event) => {
   showSearchResults(query);
 });
 
-// Estilo básico para exibição
-const style = document.createElement("style");
-style.textContent = `
-  .search-results {
-      position: absolute;
-      background: #fff;
-      border: 1px solid #ccc;
-      padding: 10px;
-      width: 100%;
-      max-height: 300px;
-      overflow-y: auto;
-      z-index: 1000;
-      display: none;
+// Navegação por teclado
+document.addEventListener('keydown', (event) => {
+  const items = document.querySelectorAll('.search-results .item');
+  if (items.length === 0) return;
+
+  let index = [...items].findIndex(item => item.classList.contains('active'));
+
+  if (event.key === "ArrowDown") {
+      index = (index + 1) % items.length; // Avança para o próximo
+  } else if (event.key === "ArrowUp") {
+      index = (index - 1 + items.length) % items.length; // Volta para o anterior
+  } else if (event.key === "Enter" && index >= 0) {
+      items[index].click(); // Simula o clique no item ativo
   }
-  .search-results .item-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+
+  items.forEach(item => item.classList.remove('active'));
+  if (index >= 0) {
+      items[index].classList.add('active');
+      items[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
-  .search-results .item {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-      border-bottom: 1px solid #eee;
-      padding: 10px;
-      cursor: pointer;
-      transition: background-color 0.2s;
-  }
-  .search-results .item:hover {
-      background: #f0f0f0;
-  }
-  .search-results .item img {
-      width: 50px;
-      height: 50px;
-      border-radius: 5px;
-      object-fit: cover;
-  }
-  .search-results .item h4 {
-      margin: 0;
-      font-size: 16px;
-  }
-  .search-results .item p {
-      margin: 0;
-      font-size: 14px;
-      color: #555;
-  }
-`;
-document.head.appendChild(style);
+});
+
+
+
