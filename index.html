@@ -4,64 +4,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RobéFood - Home Restaurante </title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://unpkg.com; style-src 'self' https://cdn.jsdelivr.net https://unpkg.com; img-src 'self' data:; font-src 'self' https://cdn.jsdelivr.net;">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://robe-food.vercel.app/">
+    <title>RobéFood - Restaurante</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css " crossorigin="anonymous" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" crossorigin="anonymous" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 </head>
+
 <body>
     <div id="page" class="site">
-        <header>
-            <div class="container">
-                <nav>
-                    <div class="left">
-                        <div class="logo"><a href="index.html" referrerpolicy="no-referrer">.RobéFood</a></div>
-                        <div class="menu">
-                            <ul>
-                                <li><a href="index.html" referrerpolicy="no-referrer">Home</a></li>
-                                <li><a href="page-menu.html" referrerpolicy="no-referrer" target="_blank">Menu</a></li>
-                                <li><a href="#">Entregas</a></li>
-                                <li>
-                                    <a href="https://www.google.com/maps/place/Rua+26,+Luanda/@-8.9025217,13.2289012,17z/data=!3m1!4b1!4m6!3m5!1s0x1a51f45209c5efb3:0x7e0576641a24ac50!8m2!3d-8.902527!4d13.2314761!16s%2Fg%2F11fmz1tdws?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D"
-                                        referrerpolicy="no-referrer" target="_blank">
-                                        Localização
-                                    </a>
-                                </li>
-                                <li><a href="contact.html" referrerpolicy="no-referrer" target="_blank">Contato</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <div class="icons">
-                            <a href="#" class="s-trigger">
-                                <i class="ri-search-line"></i>
-                                <i class="ri-close-line"></i>
-                            </a>
-
-                            <li class="cart-icon">
-                                <a href="cart.html" rel="no-referrer" referrerpolicy="no-referrer" class="cart-trigger">
-                                    <i class="ri-shopping-cart-line"></i>
-                                    <span id="cart-count">0</span>
-                                </a>
-                            </li>
-                            <a href="#" class="m-trigger mobile-only">
-                                <i class="ri-menu-line"></i>
-                            </a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-            <form class="search">
-                <div class="container">
-                    <input id="search-input" type="text" placeholder="Procure para comer..." autocomplete="off">
+       <header>
+    <div class="container">
+        <nav>
+            <div class="left">
+                <div class="logo">
+                    <a href="index.html" rel="noopener noreferrer" referrerpolicy="no-referrer">.RobéFood</a>
                 </div>
-            </form>
-            <div id="search-results" class="search-results item"></div>
-        </header>
+                <div class="menu">
+                    <ul>
+                        <li><a href="index.html" rel="noopener noreferrer" referrerpolicy="no-referrer">Home</a></li>
+                        <li><a href="page-menu.html" rel="noopener noreferrer" referrerpolicy="no-referrer" target="_blank">Menu</a></li>
+                        <li><a href="#">Entregas</a></li>
+                        <li>
+                            <a href="https://www.google.com/maps/place/Rua+26,+Luanda/@-8.9025217,13.2289012,17z/data=!3m1!4b1!4m6!3m5!1s0x1a51f45209c5efb3:0x7e0576641a24ac50!8m2!3d-8.902527!4d13.2314761!16s%2Fg%2F11fmz1tdws?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D" 
+                               rel="noopener noreferrer" referrerpolicy="no-referrer" target="_blank" aria-label="Localização do restaurante">
+                                Localização
+                            </a>
+                        </li>
+                        <li><a href="contact.html" rel="noopener noreferrer" referrerpolicy="no-referrer" target="_blank">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+                <div class="icons">
+                    <a href="#" class="s-trigger" aria-label="Abrir barra de pesquisa">
+                        <i class="ri-search-line"></i>
+                        <i class="ri-close-line"></i>
+                    </a>
+                    <ul class="cart-icon">
+                        <li>
+                            <a href="cart.html" rel="noopener noreferrer" referrerpolicy="no-referrer" class="cart-trigger" aria-label="Ir para o carrinho de compras">
+                                <i class="ri-shopping-cart-line"></i>
+                                <span id="cart-count">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="#" class="m-trigger mobile-only" aria-label="Abrir menu mobile">
+                        <i class="ri-menu-line"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <form class="search" role="search" aria-labelledby="search-form">
+        <div class="container">
+            <input id="search-input" type="text" placeholder="Procure para comer..." autocomplete="off" aria-label="Buscar no menu">
+        </div>
+    </form>
+    <div id="search-results" class="search-results item" aria-live="polite"></div>
+</header>
+
         <main>
             <!--Hero-->
             <div class="hero">
@@ -76,9 +88,9 @@
                                         <div class="tags link-slide">
                                             <span>Matabicho</span>
                                             <div class="price">$12.99</div>
-                                            <a href="#"> pedir agora!</a>
+                                            <a href="#" rel="noopener noreferrer" target="_blank">Pedir agora!</a>
                                         </div>
-                                        <div class="image"><img src="assets/slider/food1.png" alt=""></div>
+                                        <div class="image"><img src="assets/slider/food1.png" alt="Matabicho" loading="lazy"></div>
                                     </div>
                                 </div>
                                 <div class="item swiper-slide">
@@ -86,9 +98,9 @@
                                         <div class="tags link-slide">
                                             <span>Almoço</span>
                                             <div class="price">$10.99</div>
-                                            <a href="#">pedir agora!</a>
+                                            <a href="#" rel="noopener noreferrer" target="_blank">Pedir agora!</a>
                                         </div>
-                                        <div class="image"><img src="assets/slider/food2.png" alt=""></div>
+                                        <div class="image"><img src="assets/slider/food2.png" alt="Almoço" loading="lazy"></div>
                                     </div>
                                 </div>
                                 <div class="item swiper-slide">
@@ -96,9 +108,9 @@
                                         <div class="tags link-slide">
                                             <span>Jantar</span>
                                             <div class="price">$99.99</div>
-                                            <a href="#">pedir agora!</a>
+                                            <a href="#" rel="noopener noreferrer" target="_blank">Pedir agora!</a>
                                         </div>
-                                        <div class="image"><img src="assets/slider/food3.png" alt=""></div>
+                                        <div class="image"><img src="assets/slider/food3.png" alt="Jantar" loading="lazy"></div>
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +122,7 @@
                                     <div class="item">
                                         <h4>Comida para o Matabicho <br><span>Fatia de ovo estrelado</span></h4>
                                         <div class="thumbnail">
-                                            <img src="assets/slider/food1.png" alt="">
+                                            <img src="assets/slider/food1.png" alt="Matabicho prato" loading="lazy">
                                         </div>
                                     </div>
                                 </li>
@@ -118,7 +130,7 @@
                                     <div class="item">
                                         <h4>Comida para o Almoço <br><span>Feijão Cozido</span></h4>
                                         <div class="thumbnail">
-                                            <img src="assets/slider/food2.png" alt="">
+                                            <img src="assets/slider/food2.png" alt="Almoço prato" loading="lazy">
                                         </div>
                                     </div>
                                 </li>
@@ -126,7 +138,7 @@
                                     <div class="item">
                                         <h4>Comida para o Jantar <br><span>Bom saber disso</span></h4>
                                         <div class="thumbnail">
-                                            <img src="assets/slider/food3.png" alt="">
+                                            <img src="assets/slider/food3.png" alt="Jantar prato" loading="lazy">
                                         </div>
                                     </div>
                                 </li>
@@ -136,6 +148,7 @@
                 </div>
                 <div class="bg-primary"></div>
             </div>
+            
             <!--Fim Hero-->
 
             <!--Categorias-->
@@ -150,70 +163,71 @@
                         <ul class="up animate">
                             <li>
                                 <div class="icon covering">
-                                    <img src="assets/categories/cat1.jpg" alt="">
+                                    <img src="assets/categories/cat1.jpg" alt="Vegetais" loading="lazy">
                                 </div>
                                 <h3>Vegetais</h3>
                                 <div class="qty">
                                     <span>ítens</span>
                                     <strong>9</strong>
                                 </div>
-                                <a href="#" class="link"></a>
+                                <a href="#" class="link" rel="noopener noreferrer" target="_blank"></a>
                             </li>
                             <li>
                                 <div class="icon covering">
-                                    <img src="assets/categories/cat2.jpg" alt="">
+                                    <img src="assets/categories/cat2.jpg" alt="Comida do mar" loading="lazy">
                                 </div>
                                 <h3>Comida do mar</h3>
                                 <div class="qty">
                                     <span>ítens</span><strong>7</strong>
                                 </div>
-                                <a href="#" class="link"></a>
+                                <a href="#" class="link" rel="noopener noreferrer" target="_blank"></a>
                             </li>
                             <li>
                                 <div class="icon covering">
-                                    <img src="assets/categories/cat3.jpg" alt="">
+                                    <img src="assets/categories/cat3.jpg" alt="Amendoim e Sementes" loading="lazy">
                                 </div>
                                 <h3>Amendoim e Sementes</h3>
                                 <div class="qty">
                                     <span>ítens</span><strong>15</strong>
                                 </div>
-                                <a href="#" class="link"></a>
+                                <a href="#" class="link" rel="noopener noreferrer" target="_blank"></a>
                             </li>
                             <li>
                                 <div class="icon covering">
-                                    <img src="assets/categories/cat4.jpg" alt="">
+                                    <img src="assets/categories/cat4.jpg" alt="Hervas e Temperos" loading="lazy">
                                 </div>
                                 <h3>Hervas e Temperos</h3>
                                 <div class="qty">
                                     <span>ítens</span><strong>10</strong>
                                 </div>
-                                <a href="#" class="link"></a>
+                                <a href="#" class="link" rel="noopener noreferrer" target="_blank"></a>
                             </li>
                             <li>
                                 <div class="icon covering">
-                                    <img src="assets/categories/cat5.jpg" alt="">
+                                    <img src="assets/categories/cat5.jpg" alt="Pastelaria" loading="lazy">
                                 </div>
                                 <h3>Pastelaria</h3>
                                 <div class="qty">
                                     <span>ítens</span><strong>5</strong>
                                 </div>
-                                <a href="#" class="link"></a>
+                                <a href="#" class="link" rel="noopener noreferrer" target="_blank"></a>
                             </li>
                             <li>
                                 <div class="icon covering">
-                                    <img src="assets/categories/cat6.jpg" alt="">
+                                    <img src="assets/categories/cat6.jpg" alt="Decorações" loading="lazy">
                                 </div>
                                 <h3>Decorações</h3>
                                 <div class="qty">
                                     <span>ítens</span><strong>25</strong>
                                 </div>
-                                <a href="#" class="link"></a>
+                                <a href="#" class="link" rel="noopener noreferrer" target="_blank"></a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="bg-primary"></div>
             </div>
+            
             <!--FIM-Categorias-->
 
 
@@ -229,12 +243,13 @@
                     </div>
                     <nav class="tnav link-slide swiper">
                         <ul class="swiper-wrapper">
-                            <li class="swiper-slide"><a href="#0">Pastelaria</a></li>
-                            <li class="swiper-slide"><a href="#0">Pratos & Decorações</a></li>
-                            <li class="swiper-slide"><a href="#0">Hervas & Temperos</a></li>
-                            <li class="swiper-slide"><a href="#0">Nozes</a></li>
-                            <li class="swiper-slide"><a href="#0">Comida do Mar</a></li>
-                            <li class="swiper-slide"><a href="#0">Vegetais</a></li>
+                            <!-- Substituindo href="#0" por javascript:void(0); para evitar navegação inadequada -->
+                            <li class="swiper-slide"><a href="javascript:void(0);" class="menu-link" id="pastelaria">Pastelaria</a></li>
+                            <li class="swiper-slide"><a href="javascript:void(0);" class="menu-link" id="pratos">Pratos & Decorações</a></li>
+                            <li class="swiper-slide"><a href="javascript:void(0);" class="menu-link" id="ervas">Hervas & Temperos</a></li>
+                            <li class="swiper-slide"><a href="javascript:void(0);" class="menu-link" id="nozes">Nozes</a></li>
+                            <li class="swiper-slide"><a href="javascript:void(0);" class="menu-link" id="mar">Comida do Mar</a></li>
+                            <li class="swiper-slide"><a href="javascript:void(0);" class="menu-link" id="vegetais">Vegetais</a></li>
                         </ul>
                     </nav>
                     <div class="tabbed-item swiper">
@@ -243,178 +258,8 @@
                                 <ul>
                                     <li>
                                         <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/baked1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Assados no forno</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-
-                                                    <span>4.9</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="#">Pastelaria é bom</a></h2>
-                                            <div></div>
-                                            <div class="buttons">
-                                                <button>
-                                                    <a href="page-menu.html" rel="no-referrer"
-                                                        referrerpolicy="no-referrer" target="_self" class="gift"><i
-                                                            class="ri-gift-line"></i></a>
-                                                    <a href="page-menu.html" rel="no-referrer"
-                                                        referrerpolicy="no-referrer" target="_self">Encomendar agora</a>
-                                                </button>
-                                                <a href="#" class="like"><i class="ri-heart-line"></i></a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/baked2.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Assados no forno</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.7</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Pastelaria lorem upsum dolor</a></h2>
-                                            <div></div>
-                                            <div class="buttons">
-                                                <button>
-                                                    <a href="page-menu.html" rel="no-referrer"
-                                                        referrerpolicy="no-referrer" target="_self" class="gift"><i
-                                                            class="ri-gift-line"></i></a>
-                                                    <a href="page-menu.html" rel="no-referrer"
-                                                        referrerpolicy="no-referrer" target="_self">Encomendar agora</a>
-                                                </button>
-                                                <a href="#" class="like"><i class="ri-heart-line"></i></a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/baked3.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Assados no forno</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
-                                            <div></div>
-                                            <div class="buttons">
-                                                <button>
-                                                    <a href="page-menu.html" rel="no-referrer"
-                                                        referrerpolicy="no-referrer" target="_self" class="gift"><i
-                                                            class="ri-gift-line"></i></a>
-                                                    <a href="page-menu.html" rel="no-referrer"
-                                                        referrerpolicy="no-referrer" target="_self">Encomendar agora</a>
-                                                </button>
-                                                <a href="#" class="like"><i class="ri-heart-line"></i></a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/baked4.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Assados no forno</a></span>
-                                               
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
-                                            <div></div>
-                                            <div class="buttons">
-                                                <button>
-                                                    <a href="page-menu.html" rel="no-referrer"
-                                                        referrerpolicy="no-referrer" target="_self" class="gift"><i
-                                                            class="ri-gift-line"></i></a>
-                                                    <a href="page-menu.html" rel="no-referrer"
-                                                        referrerpolicy="no-referrer" target="_self">Encomendar agora</a>
-                                                </button>
-                                                <a href="#" class="like"><i class="ri-heart-line"></i></a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/baked5.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Assados no forno</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
-                                            <div></div>
-                                            <div class="buttons">
-                                                <button>
-                                                    <a href="page-menu.html" rel="no-referrer"
-                                                        referrerpolicy="no-referrer" target="_self" class="gift"><i
-                                                            class="ri-gift-line"></i></a>
-                                                    <a href="page-menu.html" rel="no-referrer"
-                                                        referrerpolicy="no-referrer" target="_self">Encomendar agora</a>
-                                                </button>
-                                                <a href="#" class="like"><i class="ri-heart-line"></i></a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/baked6.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Assados no forno</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Cupcakes cozinhados em casa</a></h2>
-                                            <div></div>
-                                            <div class="buttons">
-                                                <button>
-                                                    <a href="page-menu.html" rel="no-referrer"
-                                                        referrerpolicy="no-referrer" target="_self" class="gift"><i
-                                                            class="ri-gift-line"></i></a>
-                                                    <a href="page-menu.html" rel="no-referrer"
-                                                        referrerpolicy="no-referrer" target="_self">Encomendar agora</a>
-                                                </button>
-                                                <a href="#" class="like"><i class="ri-heart-line"></i></a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/baked7.jpg" alt="">
+                                            <a href="#" target="_blank" rel="noopener noreferrer nofollow">
+                                                <img src="assets/products/baked1.jpg" alt="Pastelaria é bom">
                                             </a>
                                         </div>
                                         <div class="meta">
@@ -425,77 +270,19 @@
                                                     <span>4.9</span>
                                                 </span>
                                             </div>
-                                            <h2><a href="">Cupcakes cozinhados em casa</a></h2>
+                                            <h2><a href="#" rel="noopener noreferrer nofollow">Pastelaria é bom</a></h2>
                                             <div></div>
                                             <div class="buttons">
                                                 <button>
-                                                    <a href="page-menu.html" rel="no-referrer"
-                                                        referrerpolicy="no-referrer" target="_self" class="gift"><i
-                                                            class="ri-gift-line"></i></a>
-                                                    <a href="page-menu.html" rel="no-referrer"
-                                                        referrerpolicy="no-referrer" target="_self">Encomendar agora</a>
-                                                </button>
-                                                <a href="#" class="like"><i class="ri-heart-line"></i></a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/baked8.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Assados no forno</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Bolo caseiro lorem</a></h2>
-                                            <div></div>
-                                            <div class="buttons">
-                                                <button>
-                                                    <a href="page-menu.html" rel="no-referrer"
-                                                        referrerpolicy="no-referrer" target="_self" class="gift"><i
-                                                            class="ri-gift-line"></i></a>
-                                                    <a href="page-menu.html" rel="no-referrer"
-                                                        referrerpolicy="no-referrer" target="_self">Encomendar agora</a>
-                                                </button>
-                                                <a href="#" class="like"><i class="ri-heart-line"></i></a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/baked9.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Assados no forno</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Bolo caseiro</a></h2>
-                                            <div></div>
-                                            <div class="buttons">
-                                                <button>
-                                                    <a href="page-menu.html" rel="no-referrer"
-                                                        referrerpolicy="no-referrer" target="_self" class="gift"><i
-                                                            class="ri-gift-line"></i></a>
-                                                    <a href="page-menu.html" rel="no-referrer"
-                                                        referrerpolicy="no-referrer" target="_self">Encomendar agora</a>
+                                                    <a href="page-menu.html" target="_blank" rel="noopener noreferrer nofollow" class="gift"><i class="ri-gift-line"></i></a>
+                                                    <a href="page-menu.html" target="_blank" rel="noopener noreferrer nofollow">Encomendar agora</a>
                                                 </button>
                                                 <a href="#" class="like"><i class="ri-heart-line"></i></a>
                                             </div>
                                         </div>
                                     </li>
                                 </ul>
+                                
                             </div>
                             <!--Assados no Forno-->
 

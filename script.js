@@ -233,98 +233,198 @@ const items = [
 const searchInput = document.getElementById("search-input");
 const resultsContainer = document.getElementById("search-results");
 
-// Função para mostrar os resultados
+// Função para exibir os resultados
 function showSearchResults(query) {
   resultsContainer.innerHTML = ""; // Limpa resultados anteriores
 
   if (!query.trim()) {
-      resultsContainer.style.display = "none"; // Esconde se estiver vazio
-      return;
+    resultsContainer.style.display = "none"; // Esconde se estiver vazio
+    return;
   }
 
   // Filtra itens com base no texto digitado
   const filteredItems = items.filter(item =>
-      item.name.toLowerCase().includes(query.toLowerCase())
+    item.name.toLowerCase().includes(query.toLowerCase())
   );
 
   if (filteredItems.length === 0) {
-      resultsContainer.innerHTML = "<p>Nenhum resultado encontrado.</p>";
+    resultsContainer.innerHTML = "<p>Nenhum resultado encontrado.</p>";
   } else {
-      // Gera resultados com detalhes
-      const list = document.createElement("div");
-      list.classList.add("item-list");
-      filteredItems.forEach(item => {
-          const itemContainer = document.createElement("div");
-          itemContainer.classList.add("item");
+    const list = document.createElement("div");
+    list.classList.add("item-list");
 
-          const image = document.createElement("img");
-          image.src = item.image;
-          image.alt = item.name;
+    filteredItems.forEach(item => {
+      const itemContainer = document.createElement("div");
+      itemContainer.classList.add("item");
 
-          const name = document.createElement("h4");
-          name.textContent = item.name;
+      const image = document.createElement("img");
+      image.src = item.image;
+      image.alt = item.name;
 
-          const category = document.createElement("p");
-          category.textContent = `Categoria: ${item.category}`;
+      const name = document.createElement("h4");
+      name.textContent = item.name;
 
-          const price = document.createElement("p");
-          price.textContent = `Preço: $ ${item.price.toFixed(2)}`;
+      const category = document.createElement("p");
+      category.textContent = `Categoria: ${item.category}`;
 
-          // Adiciona redirecionamento ao clicar no item
-          itemContainer.addEventListener("click", () => {
-              window.location.href = item.url;
-          });
+      const price = document.createElement("p");
+      price.textContent = `Preço: $${item.price.toFixed(2)}`;
 
-          itemContainer.appendChild(image);
-          itemContainer.appendChild(name);
-          itemContainer.appendChild(category);
-          itemContainer.appendChild(price);
-
-          list.appendChild(itemContainer);
+      // Adiciona redirecionamento ao clicar no item
+      itemContainer.addEventListener("click", () => {
+        window.location.href = item.url;
       });
-      resultsContainer.appendChild(list);
 
-      // Adicionar eventos para os itens criados
-      document.querySelectorAll('.search-results .item').forEach((item) => {
-          item.addEventListener('mouseenter', () => {
-              item.classList.add('active');
-          });
-          item.addEventListener('mouseleave', () => {
-              item.classList.remove('active');
-          });
-      });
+      itemContainer.appendChild(image);
+      itemContainer.appendChild(name);
+      itemContainer.appendChild(category);
+      itemContainer.appendChild(price);
+
+      list.appendChild(itemContainer);
+    });
+
+    resultsContainer.appendChild(list);
   }
 
   resultsContainer.style.display = "block"; // Mostra resultados
 }
 
-// Evento para capturar entrada de texto
-searchInput.addEventListener("input", (event) => {
-  const query = event.target.value;
-  showSearchResults(query);
-});
-
-// Navegação por teclado
-document.addEventListener('keydown', (event) => {
-  const items = document.querySelectorAll('.search-results .item');
-  if (items.length === 0) return;
-
-  let index = [...items].findIndex(item => item.classList.contains('active'));
-
-  if (event.key === "ArrowDown") {
-      index = (index + 1) % items.length; // Avança para o próximo
-  } else if (event.key === "ArrowUp") {
-      index = (index - 1 + items.length) % items.length; // Volta para o anterior
-  } else if (event.key === "Enter" && index >= 0) {
-      items[index].click(); // Simula o clique no item ativo
-  }
-
-  items.forEach(item => item.classList.remove('active'));
-  if (index >= 0) {
-      items[index].classList.add('active');
-      items[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
+// Adicionar evento de input ao campo de busca
+searchInput.addEventListener("input", event => {
+  showSearchResults(event.target.value);
 });
 
 
 
+// Função para sanitizar entradas
+function sanitizeInput(input) {
+  const tempDiv = document.createElement("div");
+  tempDiv.textContent = input;
+  return tempDiv.innerHTML;
+}
+
+// Validação de dados do carrinho
+function validateCartData(cart) {
+  return Array.isArray(cart) && cart.every(item => {
+    return typeof item.name === "string" &&
+           typeof item.price === "string" &&
+           typeof item.quantity === "number";
+  });
+}
+
+// Atualiza a contagem do carrinho
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  if (!validateCartData(cart)) {
+    localStorage.removeItem("cart");
+    return;
+  }
+  
+  const count = cart.reduce((total, item) => total + item.quantity, 0);
+  const cartCountElement = document.getElementById("cart-count");
+
+  if (cartCountElement) {
+    cartCountElement.textContent = count;
+    cartCountElement.classList.add("pulse");
+    setTimeout(() => cartCountElement.classList.remove("pulse"), 300);
+  }
+}
+
+// Adiciona ao carrinho com validação
+function updateCart(product, action) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  if (!validateCartData(cart)) cart = [];
+
+  const existingProductIndex = cart.findIndex(item => item.name === product.name);
+  if (existingProductIndex !== -1) {
+    if (action === "remove") {
+      cart[existingProductIndex].quantity -= 1;
+      if (cart[existingProductIndex].quantity <= 0) cart.splice(existingProductIndex, 1);
+    } else if (action === "add") {
+      cart[existingProductIndex].quantity += 1;
+    }
+  } else if (action === "add") {
+    product.quantity = 1;
+    cart.push(product);
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
+// Notificações amigáveis
+function showNotification(message, type = "success") {
+  const notification = document.createElement("div");
+  notification.className = `notification ${type}`;
+  notification.textContent = message;
+  document.body.appendChild(notification);
+
+  setTimeout(() => notification.remove(), 3000);
+}
+
+// Busca com debounce
+function debounce(func, delay) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func(...args), delay);
+  };
+}
+
+// Busca dinâmica com validação
+function showSearchResults(query) {
+  resultsContainer.innerHTML = "";
+  if (!query.trim()) {
+    resultsContainer.style.display = "none";
+    return;
+  }
+
+  const filteredItems = items.filter(item => 
+    sanitizeInput(item.name).toLowerCase().includes(query.toLowerCase())
+  );
+
+  if (filteredItems.length === 0) {
+    resultsContainer.innerHTML = "<p>Nenhum resultado encontrado.</p>";
+  } else {
+    const list = document.createElement("div");
+    list.classList.add("item-list");
+    filteredItems.forEach(item => {
+      const itemContainer = document.createElement("div");
+      itemContainer.classList.add("item");
+
+      const image = document.createElement("img");
+      image.src = item.image;
+      image.alt = sanitizeInput(item.name);
+
+      const name = document.createElement("h4");
+      name.textContent = sanitizeInput(item.name);
+
+      const category = document.createElement("p");
+      category.textContent = `Categoria: ${sanitizeInput(item.category)}`;
+
+      const price = document.createElement("p");
+      price.textContent = `Preço: $ ${item.price.toFixed(2)}`;
+
+      itemContainer.addEventListener("click", () => {
+        window.location.href = item.url;
+      });
+
+      itemContainer.appendChild(image);
+      itemContainer.appendChild(name);
+      itemContainer.appendChild(category);
+      itemContainer.appendChild(price);
+      list.appendChild(itemContainer);
+    });
+    resultsContainer.appendChild(list);
+  }
+
+  resultsContainer.style.display = "block";
+}
+
+// Event listener com debounce na pesquisa
+searchInput.addEventListener("input", debounce(event => {
+  showSearchResults(event.target.value);
+}, 300));
+
+// Atualiza o carrinho ao carregar a página
+document.addEventListener("DOMContentLoaded", updateCartCount);
