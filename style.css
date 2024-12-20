@@ -284,8 +284,8 @@ header nav .menu ul li a:hover {
 }
 
 /* 01. HEADER----------
-    *   b. pesquisar
-    ----------------------*/
+  *   b. pesquisar
+  ----------------------*/
 header .search {
   background-color: var(--white-color);
   height: 0;
@@ -326,36 +326,43 @@ header .s-trigger i.ri-close-line,
 .showsearch header .s-trigger:hover {
   background-color: #ff25254a;
 }
-
-
- /* Estilos para a busca e resultados */
- .search-results {
-  position: relative;
-  background: #fff;
+header .search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--white-color);
   border: 1px solid transparent;
   padding: 10px;
   width: 100%;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   max-height: 300px;
   overflow-y: auto;
   z-index: 1000;
   display: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.search-results .item-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.search-results p {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  margin: 10px 0;
 }
 .search-results .item {
   display: flex;
   gap: 15px;
   align-items: center;
-  border-bottom: 1px solid #eee;
+  border-bottom: none;
+  border-radius: 5px;
+  padding: 8px 12px; /* Ajusta o espaçamento interno */
   padding: 10px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color .2s, transform .2s ease;
 }
 .search-results .item:hover {
-  background: #f0f0f0;
+  background: #f9f9f9;
+  transform: translateY(-2px); /* Adiciona um leve efeito de elevação */
 }
 .search-results .item img {
   width: 50px;
@@ -372,24 +379,15 @@ header .s-trigger i.ri-close-line,
   font-size: 14px;
   color: #555;
 }
-.search-results p {
-  text-align: center;
-  color: #999;
-  font-style: italic;
-  margin: 10px 0;
+.search-results .item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-.search-results {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.search-results .item {
-  border-bottom: none; /* Remove a borda inferior */
-  border-radius: 5px;
-  padding: 8px 12px; /* Ajusta o espaçamento interno */
-  transition: transform 0.2s ease; /* Adiciona uma transição suave */
-}
-.search-results .item:hover {
-  background: #f9f9f9;
-  transform: translateY(-2px); /* Adiciona um leve efeito de elevação */
+.search-results .item.active {
+  background-color:  var(--light-color);
+  border-left: 4px solid var(--primary-color);
+  padding-left: 6px; /* Compensa a borda */
 }
 .search-results::-webkit-scrollbar {
   width: 8px;
@@ -399,15 +397,11 @@ header .s-trigger i.ri-close-line,
   border-radius: 4px;
 }
 .search-results::-webkit-scrollbar-thumb:hover {
-  background: #bbb;
+  background: var(--grey-color);
 }
 .search-results::-webkit-scrollbar-track {
   background: #f9f9f9;
-}
-.search-results .item.active {
-  background-color:  var(--light-color);
-  border-left: 4px solid var(--primary-color);
-  padding-left: 6px; /* Compensa a borda */
+  border-radius: 10px;
 }
 
 

@@ -96,6 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+// mostrar o botão menu para mobile
 // Chama esta função quando a página carregar
 document.addEventListener("DOMContentLoaded", updateCartCount);
 const divtoShow = "nav .menu";
@@ -120,7 +122,8 @@ document.addEventListener("click", (e) => {
     document.body.classList.remove("menu-visible");
   }
 });
-//------------Pesquisar
+
+//------------Mostrar a barra de Pesquisar
 const sTrigger = document.querySelector(".s-trigger");
 const addclass = document.querySelector(".site");
 sTrigger.addEventListener("click", () => {
@@ -237,7 +240,7 @@ function showSearchResults(query) {
   resultsContainer.innerHTML = ""; // Limpa resultados anteriores
 
   if (!query.trim()) {
-      resultsContainer.style.display = "none"; // Esconde se vazio
+      resultsContainer.style.display = "none"; // Esconde se estiver vazio
       return;
   }
 
