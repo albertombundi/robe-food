@@ -96,8 +96,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-// mostrar o botão menu para mobile
 // Chama esta função quando a página carregar
 document.addEventListener("DOMContentLoaded", updateCartCount);
 const divtoShow = "nav .menu";
@@ -123,7 +121,7 @@ document.addEventListener("click", (e) => {
   }
 });
 
-//------------Mostrar a barra de Pesquisar
+//------------Mostrar a barra Pesquisar
 const sTrigger = document.querySelector(".s-trigger");
 const addclass = document.querySelector(".site");
 sTrigger.addEventListener("click", () => {
