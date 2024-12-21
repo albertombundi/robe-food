@@ -188,44 +188,44 @@ box.forEach((el) => {
 // Lista de itens com URLs adicionadas
 const items = [
   { 
-      id: 1, 
-      name: "Pastelaria é bom", 
-      category: "Assados no forno", 
-      price: 45.00, 
-      image: "./assets/products/baked1.jpg",
-      url: "./page-menu.html?id=1" 
+    id: 1, 
+    name: "Pastelaria é bom", 
+    category: "Assados no forno", 
+    price: 45.00, 
+    image: "./assets/products/baked1.jpg",
+    url: "./page-menu.html?id=1" 
   },
   { 
-      id: 2, 
-      name: "Pastelaria lorem upsum dolor", 
-      category: "Assados no forno", 
-      price: 25.00, 
-      image: "./assets/products/baked2.jpg",
-      url: "./page-menu.html?id=2" 
+    id: 2, 
+    name: "Pastelaria lorem upsum dolor", 
+    category: "Assados no forno", 
+    price: 25.00, 
+    image: "./assets/products/baked2.jpg",
+    url: "./page-menu.html?id=2" 
   },
   { 
-      id: 3, 
-      name: "Dolor Cupcakes", 
-      category: "Assados no forno", 
-      price: 80.00, 
-      image: "./assets/products/baked3.jpg",
-      url: "./page-menu.html?id=3" 
+    id: 3, 
+    name: "Dolor Cupcakes", 
+    category: "Assados no forno", 
+    price: 80.00, 
+    image: "./assets/products/baked3.jpg",
+    url: "./page-menu.html?id=3" 
   },
   { 
-      id: 4, 
-      name: "Dolor Cupcakes", 
-      category: "Assados no forno", 
-      price: 50.00, 
-      image: "./assets/products/baked4.jpg",
-      url: "./page-menu.html?id=4" 
+    id: 4, 
+    name: "Dolor Cupcakes", 
+    category: "Assados no forno", 
+    price: 50.00, 
+    image: "./assets/products/baked4.jpg",
+    url: "./page-menu.html?id=4" 
   },
   { 
-      id: 5, 
-      name: "Dolor Cupcakes", 
-      category: "Assados no forno", 
-      price: 20.00, 
-      image: "./assets/products/baked5.jpg",
-      url: "./page-menu.html?id=5" 
+    id: 5, 
+    name: "Dolor Cupcakes", 
+    category: "Assados no forno", 
+    price: 20.00, 
+    image: "./assets/products/baked5.jpg",
+    url: "./page-menu.html?id=5" 
   },
 ];
 
