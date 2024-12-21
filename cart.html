@@ -161,7 +161,24 @@
     </div>
     <div class="overlay"></div>
     <script>
-                // Atualiza a contagem de itens no carrinho
+
+        // Função para mostrar o menu Hamburguer para mobile
+        document.addEventListener("DOMContentLoaded", updateCartCount);
+        const divtoShow = "nav .menu";
+        const divPopup = document.querySelector(divtoShow);
+        const divTrigger = document.querySelector(".m-trigger");
+
+        divTrigger.addEventListener("click", () => {
+        setTimeout(() => {
+            if (!divPopup.classList.contains("show")) {
+            divPopup.classList.add("show");
+            document.body.classList.add("menu-visible");
+            }
+        }, 250);
+        });
+
+        
+        // Atualiza a contagem de itens no carrinho
         function updateCartCount() {
             const cart = JSON.parse(localStorage.getItem("cart")) || [];
             const count = cart.reduce((total, item) => total + item.quantity, 0);
@@ -298,9 +315,9 @@
             const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
             // Coletar as informações do cliente
-            const nome = prompt("Qual é o seu nome?");
-            const telefone = prompt("Qual é o seu número de telefone?");
-            const endereco = prompt("Qual é a sua rua de residência?");
+            const nome = prompt("Digite seu nome: ");
+            const telefone = prompt("Digite o seu número de telefone: ");
+            const endereco = prompt("Digite sua rua / ponto de referência: ");
 
             // Verificar se os dados foram fornecidos
             if (!nome || !telefone || !endereco) {
@@ -322,19 +339,19 @@
                 // Adicionar o produto à mensagem
                 mensagem += `Produto: ${product.name}\n`;
                 mensagem += `Quantidade: ${product.quantity}\n`;
-                mensagem += `Preço Unitário: ${product.price}\n`;
-                mensagem += `Total do Produto: $${totalItem.toFixed(2)}\n`;
-                mensagem += `Imagem: ${product.image}\n\n`; // A imagem será um link (URL da imagem)
+                //mensagem += `Preço Unitário: ${product.price}\n`;
+                mensagem += `Total: $${totalItem.toFixed(2)}\n`;
+                mensagem += `Imagem: ${product.image}\n\n |`; // A imagem será um link (URL da imagem)
             });
 
             // Substituir espaços e caracteres especiais para garantir que a mensagem seja enviada corretamente
             mensagem = encodeURIComponent(mensagem);
 
             // Número do gerente do restaurante 
-            const numeroGerente = "+244922987493";
+            const managerNumb = "+244922987493";
 
             // Criar o link do WhatsApp
-            const whatsappLink = `https://api.whatsapp.com/send?phone=${numeroGerente}&text=${mensagem}`;
+            const whatsappLink = `https://api.whatsapp.com/send?phone=${managerNumb}&text=${mensagem}`;
 
             // Abrir o WhatsApp
             window.open(whatsappLink, "_blank");
