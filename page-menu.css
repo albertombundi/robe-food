@@ -417,13 +417,15 @@ header .search-results {
   border-bottom: none;
   border-radius: 5px;
   padding: 8px 12px; /* Ajusta o espaçamento interno */
-  padding: 10px;
   cursor: pointer;
   transition: background-color .2s, transform .2s ease;
 }
 .search-results .item:hover {
-  background: #f9f9f9;
-  transform: translateY(-2px); /* Adiciona um leve efeito de elevação */
+  border-left: 4px solid var(--primary-color);
+  padding-left: 6px; /* Compensa a borda */
+  background: var(--light-color);
+  transform: translateY(-3px); /* Adiciona um leve efeito de elevação */
+  transition: background-color .3s, transform .3s ease;
 }
 .search-results .item img {
   width: 50px;
@@ -445,11 +447,7 @@ header .search-results {
   flex-direction: column;
   gap: 10px;
 }
-.search-results .item.active {
-  background-color:  var(--light-color);
-  border-left: 4px solid var(--primary-color);
-  padding-left: 6px; /* Compensa a borda */
-}
+
 .search-results::-webkit-scrollbar {
   width: 8px;
 }
@@ -1227,7 +1225,7 @@ footer .copyright {
   .hero {
     color: var(--white-color);
     text-align: center;
-    top: 0;
+    top: 50px;
   }
   .search-results {
     position: relative; /* Remove a posição absoluta para ocupar o fluxo do documento */
@@ -1262,7 +1260,7 @@ footer .copyright {
   .hero {
     color: var(--white-color);
     text-align: center;
-    top: 4em;
+    top: 3em;
   }
   /*Página do carrinho*/
   .cart-title {
@@ -1293,5 +1291,10 @@ footer .copyright {
     font-weight: 800;
     line-height: 1;
     margin: 0 0 -1.3em;
+  }
+  .hero {
+    color: var(--white-color);
+    text-align: center;
+    top: 4em;
   }
 }
