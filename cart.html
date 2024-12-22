@@ -13,6 +13,36 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 </head>
+<style>
+    .cli-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .clinfo {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        width: 300px;
+    }
+
+    .clinfo form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .clinfo input, .clinfo button {
+        margin-bottom: 10px;
+    }
+</style>
 
 <body>
     <div id="page" class="cart">
@@ -113,7 +143,7 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                            <a class="primary-button" id="finalizar-pedido">Finalizar Pedido</a>
+                                            <a class="primary-button" id="ordernow">Pedir Agora</a>
                                         </div>
                                     </div>
                                 </div>
@@ -123,17 +153,24 @@
                 </div>
            </div>
         </main>
-        <div class="cli-modal">
-            <div class="clinfo">
-                <label for="name">Digite o seu nome: </label>
-                <input type="text" name="name" id="name">
-                <label for="number">Digite o seu número de telefone: </label>
-                <input type="tel" name="number" id="number">
-                <label for="address">Digite a sua rua/ponto de referência: </label>
-                <input type="text" name="address" id="address">
-                
+        <div id="pedido-popup" class="popup">
+            <div class="popup-content">
+              <h2>Finalizar Pedido</h2>
+              <form id="form-pedido">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required />
+          
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" pattern="[\+][0-9]{2}[0-9]{9,}" required />
+          
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" required />
+          
+                <button id="finalizar-pedido">Finalizar Pedido</button>   
+                <button type="button" id="fechar-popup">Fechar</button>
+              </form>
             </div>
-        </div>
+          </div>
         <footer>
             <div class="container">
                 <div class="wrapper">
@@ -188,6 +225,57 @@
         }, 250);
         });
 
+
+        function renderCart() {
+    const cartTableBody = document.querySelector("#cart-table tbody");
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cartTableBody.innerHTML = "";
+
+    cart.forEach((product, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td><img src="${product.image}" alt="${product.name}"><strong>${product.name}</strong></td>
+            <td>${product.price}</td>
+            <td>
+                <button class="minus" data-index="${index}">-</button>
+                <input type="text" value="${product.quantity}" class="quantity-input" data-index="${index}" readonly>
+                <button class="plus" data-index="${index}">+</button>
+            </td>
+            <td class="subtotal">${(parseFloat(product.price.replace("$", "")) * product.quantity).toFixed(2)}</td>
+            <td><a href="#" class="item-remove" data-index="${index}">X</a></td>
+        `;
+        cartTableBody.appendChild(row);
+    });
+
+    updateCartTotals();
+}
+
+function updateCartTotals() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const deliveryFee = 100.0;
+    const discount = 10.0;
+    let subtotal = 0;
+
+    cart.forEach((item) => subtotal += parseFloat(item.price.replace("$", "")) * item.quantity);
+    const total = subtotal - discount + deliveryFee;
+
+    document.querySelector(".cart-total .subtotal").textContent = `$${subtotal.toFixed(2)}`;
+    document.querySelector(".cart-total .discount").textContent = `$${discount.toFixed(2)}`;
+    document.querySelector(".cart-total .delivery-fee").textContent = `$${deliveryFee.toFixed(2)}`;
+    document.querySelector(".cart-total .total").textContent = `$${total.toFixed(2)}`;
+}
+
+window.addEventListener("storage", function (e) {
+    if (e.key === "cart") {
+        renderCart();
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    renderCart();
+});
+
+
         
         // Atualiza a contagem de itens no carrinho
         function updateCartCount() {
@@ -227,6 +315,8 @@
             document.querySelector(".cart-total tbody tr.grand-total td strong").textContent = `$${total.toFixed(2)}`;
         }
 
+        
+        
         // Atualiza o carrinho no localStorage e renderiza a tabela
         function updateCart() {
             const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -319,62 +409,61 @@
             updateCartTotals(); // Atualiza os totais ao carregar a página
         });
 
-
         
-        // Função para enviar os detalhes do pedido via WhatsApp
-        function sendOrderToWhatsApp() {
-            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        
+        // Exibe o popup ao clicar em "Ordernow"
+        document.getElementById("ordernow").addEventListener("click", function (e) {
+        e.preventDefault();
+        document.getElementById("pedido-popup").style.display = "block";
+        updateCartTotals();
+        });
 
-            // Coletar as informações do cliente
-            const nome = prompt("Digite seu nome: ");
-            const telefone = prompt("Digite o seu número de telefone: ");
-            const endereco = prompt("Digite sua rua / ponto de referência: ");
+        // Fecha o popup ao clicar em "Fechar"
+        document.getElementById("fechar-popup").addEventListener("click", function () {
+        document.getElementById("pedido-popup").style.display = "none";
+        });
 
-            // Verificar se os dados foram fornecidos
-            if (!nome || !telefone || !endereco) {
-                alert("Por favor, forneça todos os dados necessários.");
-                return;
-            }
+        // Envia o pedido via WhatsApp ao clicar em "Finalizar Pedido"
+        document.getElementById("finalizar-pedido").addEventListener("click", function () {
+        const nome = document.getElementById("nome").value;
+        const telefone = document.getElementById("telefone").value;
+        const endereco = document.getElementById("endereco").value;
 
-            // Iniciar a mensagem com as informações do cliente
-            let mensagem = `*Novo Pedido*\n`;
-            mensagem += `Cliente: ${nome}\n`;
-            mensagem += `Telefone: ${telefone}\n`;
-            mensagem += `Endereço: ${endereco}\n\n`;
-
-            // Adicionar os detalhes dos itens do carrinho
-            cart.forEach((product) => {
-                // Calcular o total do produto (preço * quantidade)
-                const totalItem = parseFloat(product.price.replace("$", "")) * product.quantity;
-                
-                // Adicionar o produto à mensagem
-                mensagem += `Produto: ${product.name}\n`;
-                mensagem += `Quantidade: ${product.quantity}\n`;
-                //mensagem += `Preço Unitário: ${product.price}\n`;
-                mensagem += `Total: $${totalItem.toFixed(2)}\n`;
-                mensagem += `Imagem: ${product.image}\n\n |`; // A imagem será um link (URL da imagem)
-            });
-
-            // Substituir espaços e caracteres especiais para garantir que a mensagem seja enviada corretamente
-            mensagem = encodeURIComponent(mensagem);
-
-            // Número do gerente do restaurante 
-            const managerNumb = "+244922987493";
-
-            // Criar o link do WhatsApp
-            const whatsappLink = `https://api.whatsapp.com/send?phone=${managerNumb}&text=${mensagem}`;
-
-            // Abrir o WhatsApp
-            window.open(whatsappLink, "_blank");
+        if (!nome || !telefone || !endereco) {
+            alert("Preencha todos os campos.");
+            return;
         }
 
-        // Evento para o botão de finalização do pedido
-        document.getElementById("finalizar-pedido").addEventListener("click", function (e) {
-            e.preventDefault(); // Prevenir comportamento padrão do link
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let mensagem = `(* Novo Pedido *)\n Cliente: ${nome}\n | Telefone: ${telefone}\n | Endereço: ${endereco}\n\n|`;
 
-            // Chama a função que envia o pedido para o WhatsApp
-            sendOrderToWhatsApp();
+        cart.forEach((product) => {
+            const totalItem = parseFloat(product.price.replace("$", "")) * product.quantity;
+            mensagem += ` Produto: ${product.name}\n | Quantidade: ${product.quantity}\n | Total: $${totalItem.toFixed(2)}\n |`;
         });
+
+        mensagem = encodeURIComponent(mensagem);
+        const whatsappLink = `https://api.whatsapp.com/send?phone=+244922987493&text=${mensagem}`;
+
+        window.open(whatsappLink, "_blank");
+        document.getElementById("pedido-popup").style.display = "none"; // Fecha o popup
+        });
+
+        // Atualiza os totais do carrinho no popup
+        function updateCartTotals() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const deliveryFee = 100.0;
+        const discount = 10.0;
+        let subtotal = 0;
+
+        cart.forEach((item) => subtotal += parseFloat(item.price.replace("$", "")) * item.quantity);
+        const total = subtotal - discount + deliveryFee;
+
+        document.querySelector(".cart-total tbody tr:nth-child(1) td").textContent = `$${subtotal.toFixed(2)}`;
+        document.querySelector(".cart-total tbody tr:nth-child(2) td").textContent = `$${discount.toFixed(2)}`;
+        document.querySelector(".cart-total tbody tr:nth-child(3) td").textContent = `$${deliveryFee.toFixed(2)}`;
+        document.querySelector(".cart-total tbody tr.grand-total td strong").textContent = `$${total.toFixed(2)}`;
+        }
 
     </script>
 </body>

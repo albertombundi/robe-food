@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RobéFood - Menu Restaurante</title>
-    <link rel="stylesheet" href="page-menu.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; font-src 'self' https://cdn.jsdelivr.net;">
+        <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+        <meta http-equiv="X-Content-Type-Options" content="nosniff">
+        <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+        <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+        <meta name="referrer" content="strict-origin-when-cross-origin">
+        <title>RobéFood - Menu Restaurante</title>
+        <link rel="stylesheet" href="page-menu.css">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+    </head>
+    
 <body>
     <div id="page" class="menu">
         <header>
             <div class="container">
                 <nav>
                     <div class="left">
-                        <div class="logo"><a href="index.html" referrerpolicy="no-referrer">.RobéFood</a></div>
+                        <div class="logo">
+                            <a href="index.html" referrerpolicy="no-referrer">.RobéFood</a>
+                        </div>
                         <div class="menu">
                             <ul>
                                 <li><a href="index.html" referrerpolicy="no-referrer">Home</a></li>
@@ -25,7 +34,7 @@
                                 <li><a href="#">Entregas</a></li>
                                 <li>
                                     <a href="https://www.google.com/maps/place/Rua+26,+Luanda/@-8.9025217,13.2289012,17z/data=!3m1!4b1!4m6!3m5!1s0x1a51f45209c5efb3:0x7e0576641a24ac50!8m2!3d-8.902527!4d13.2314761!16s%2Fg%2F11fmz1tdws?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D"
-                                        referrerpolicy="no-referrer" target="_blank">
+                                        referrerpolicy="no-referrer" target="_blank" rel="noopener noreferrer">
                                         Localização
                                     </a>
                                 </li>
@@ -39,9 +48,9 @@
                                 <i class="ri-search-line"></i>
                                 <i class="ri-close-line"></i>
                             </a>
-                            <!-- Procure o elemento do ícone do carrinho e adicione um span para a contagem -->
+                            <!-- Ícone do carrinho com contagem de itens -->
                             <li class="cart-icon">
-                                <a href="cart.html" rel="no-referrer" referrerpolicy="no-referrer" target="_blank" class="cart-trigger">
+                                <a href="cart.html" rel="noopener noreferrer" referrerpolicy="no-referrer" target="_blank" class="cart-trigger">
                                     <i class="ri-shopping-cart-line"></i>
                                     <span id="cart-count">0</span>
                                 </a>
@@ -50,7 +59,7 @@
                                 <i class="ri-menu-line"></i>
                             </a>
                         </div>
-                    </div>
+                    </div>                    
                 </nav>
             </div>
             <form class="search">
@@ -60,7 +69,6 @@
             </form>
             <div id="search-results" class="search-results item"></div>
         </header>
-
         <main>
             <div class="hero">
                 <div class="bg-dark"></div>
@@ -77,49 +85,53 @@
 
                     <nav class="tnav link-slide">
                         <ul>
-                            <li><a href="#0">Pastelaria</a></li>
-                            <li><a href="#0">Pratos & Decorações</a></li>
-                            <li><a href="#0">Hervas & Temperos</a></li>
-                            <li><a href="#0">Nozes</a></li>
-                            <li><a href="#0">Comida do Mar</a></li>
-                            <li><a href="#0">Vegetais</a></li>
+                            <li><a href="#pastelaria" rel="noopener noreferrer">Pastelaria</a></li>
+                            <li><a href="#pratos-decoracoes" rel="noopener noreferrer">Pratos & Decorações</a></li>
+                            <li><a href="#hervas-temperos" rel="noopener noreferrer">Hervas & Temperos</a></li>
+                            <li><a href="#nozes" rel="noopener noreferrer">Nozes</a></li>
+                            <li><a href="#comida-do-mar" rel="noopener noreferrer">Comida do Mar</a></li>
+                            <li><a href="#vegetais" rel="noopener noreferrer">Vegetais</a></li>
                         </ul>
                     </nav>
+                    
                     <div class="tabbed-item">
                         <div class="products">
                             <div>
                                 <ul>
                                     <li class="item">
                                         <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/categories/cat5.jpg" alt="">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/categories/cat5.jpg" alt="Assados no forno">
                                             </a>
                                         </div>
                                         <div class="meta">
                                             <div class="catrate">
-                                                <span class="cat"><a href="#">Assados no forno</a></span>
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Assados no forno</a>
+                                                </span>
                                                 <span class="rating">
                                                     <i class="ri-star-fill"></i>
                                                     <span>4.9</span>
                                                 </span>
                                             </div>
-                                            <h2><a href="">Pastelaria é bom</a></h2>
+                                            <h2><a href="#" rel="noopener noreferrer">Pastelaria é bom</a></h2>
                                             <div class="price">
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
                                                 <button data-name="Pastelaria é bom" data-price="11.99"
-                                                    data-quantity="1" data-image="assets/products/baked1.jpg">
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
                                                     Adicionar no carrinho
                                                 </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" target=""
-                                                    class="cart-icon-page">
-
+                                                <a href="cart.html" referrerpolicy="no-referrer" target="_blank" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </a>
                                             </div>
                                         </div>
                                     </li>
+                                    
                                     <li class="item">
                                         <div class="thumbnail covering">
                                             <a href="#">
@@ -1608,34 +1620,35 @@
                     <div class="widget-footer">
                         <h4>Resto</h4>
                         <ul>
-                            <li><a href="#">Sobre Nós</a></li>
-                            <li><a href="#">Destaques</a></li>
-                            <li><a href="#">Nosso Menu</a></li>
-                            <li><a href="#">Blog</a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Sobre nós">Sobre Nós</a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Destaques">Destaques</a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Nosso Menu">Nosso Menu</a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Blog">Blog</a></li>
                         </ul>
                     </div>
                     <div class="widget-footer">
                         <h4>Apoio</h4>
                         <ul>
-                            <li><a href="#">Centro de Apoio</a></li>
-                            <li><a href="#">Feedback</a></li>
-                            <li><a href="#">P e R</a></li>
-                            <li><a href="#">Contate-nos</a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Centro de Apoio">Centro de Apoio</a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Feedback">Feedback</a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="P e R">P e R</a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Contate-nos">Contate-nos</a></li>
                         </ul>
                     </div>
                     <div class="widget-footer">
-                        <div class="logo"><a href="#">.RobéFood</a></div>
+                        <div class="logo"><a href="#" rel="noopener noreferrer">.RobéFood</a></div>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, ipsum!</p>
                         <p>Urb. Nova vida. <br>Luanda, Angola</p>
                         <ul class="socials">
-                            <li><a href="#"><i class="ri-facebook-line"></i></a></li>
-                            <li><a href="#"><i class="ri-twitter-line"></i></a></li>
-                            <li><a href="#"><i class="ri-instagram-line"></i></a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Facebook"><i class="ri-facebook-line"></i></a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Twitter"><i class="ri-twitter-line"></i></a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Instagram"><i class="ri-instagram-line"></i></a></li>
                         </ul>
                     </div>
                 </div>
-                <p class="copyright">&copy 2024 .RobéBusiness &reg;.Todos os direitos reservados.</p>
+                <p class="copyright">&copy 2024 .RobéFood &reg;. Todos os direitos reservados.</p>
             </div>
+            
         </footer>
     </div>
     <div class="overlay"></div>
