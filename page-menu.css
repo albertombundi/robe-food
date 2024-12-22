@@ -463,6 +463,8 @@ header .search-results {
   border-radius: 10px;
 }
 
+
+
 .popup {
   display: none; /* Inicialmente escondido */
   position: fixed;
@@ -486,6 +488,36 @@ header .search-results {
 
 .popup button {
   margin: 10px;
+}
+form .secondary-btn {
+  padding: 0.6em 2em;
+  width: fit-content;
+  height: auto;
+  border: none;
+  border-radius: 2em;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+}
+form .secondary-btn:hover {
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  transition: var(--trans-back-co);
+}
+form .close-btn {
+  padding: 0.6em 2em;
+  width: fit-content;
+  height: auto;
+  border-radius: 2em;
+  border: none;
+  cursor: pointer;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+form .close-btn:hover {
+  background-color: var(--secondary-color);
+  color:var(--white-color);
+  transition: var(--trans-back-co);
 }
 
 /*---------------

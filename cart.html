@@ -166,8 +166,8 @@
                 <label for="endereco">Endereço:</label>
                 <input type="text" id="endereco" name="endereco" required />
           
-                <button id="finalizar-pedido">Finalizar Pedido</button>   
-                <button type="button" id="fechar-popup">Fechar</button>
+                <button class="secondary-btn" id="finalizar-pedido">Finalizar Pedido</button>   
+                <button class="close-btn" type="button" id="fechar-popup">Fechar</button>
               </form>
             </div>
           </div>
@@ -414,7 +414,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Exibe o popup ao clicar em "Ordernow"
         document.getElementById("ordernow").addEventListener("click", function (e) {
         e.preventDefault();
-        document.getElementById("pedido-popup").style.display = "block";
+        document.getElementById("pedido-popup").style.display = "flex";
         updateCartTotals();
         });
 
