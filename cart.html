@@ -155,21 +155,21 @@
         </main>
         <div id="pedido-popup" class="popup">
             <div class="popup-content">
-              <h2>Finalizar Pedido</h2>
+              <h2>Endereço de Entrega</h2>
               <form id="form-pedido">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" required />
-          
                 <label for="telefone">Telefone:</label>
                 <input type="tel" id="telefone" name="telefone" pattern="[\+][0-9]{2}[0-9]{9,}" required />
-          
-                <label for="endereco">Endereço:</label>
+                <label for="endereco">Nº Rua/Ponto de Referência:</label>
                 <input type="text" id="endereco" name="endereco" required />
-          
-                <button class="secondary-btn" id="finalizar-pedido">Finalizar Pedido</button>   
-                <button class="close-btn" type="button" id="fechar-popup">Fechar</button>
               </form>
+              <div class="btns">
+                <button class="close-btn" type="button" id="fechar-popup">Fechar</button>
+                <button class="secondary-btn" id="finalizar-pedido">Finalizar Pedido</button>
+              </div>
             </div>
+            
           </div>
         <footer>
             <div class="container">
@@ -227,27 +227,27 @@
 
 
         function renderCart() {
-    const cartTableBody = document.querySelector("#cart-table tbody");
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cartTableBody.innerHTML = "";
+            const cartTableBody = document.querySelector("#cart-table tbody");
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cartTableBody.innerHTML = "";
 
-    cart.forEach((product, index) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td><img src="${product.image}" alt="${product.name}"><strong>${product.name}</strong></td>
-            <td>${product.price}</td>
-            <td>
-                <button class="minus" data-index="${index}">-</button>
-                <input type="text" value="${product.quantity}" class="quantity-input" data-index="${index}" readonly>
-                <button class="plus" data-index="${index}">+</button>
-            </td>
-            <td class="subtotal">${(parseFloat(product.price.replace("$", "")) * product.quantity).toFixed(2)}</td>
-            <td><a href="#" class="item-remove" data-index="${index}">X</a></td>
-        `;
-        cartTableBody.appendChild(row);
-    });
+            cart.forEach((product, index) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td><img src="${product.image}" alt="${product.name}"><strong>${product.name}</strong></td>
+                <td>${product.price}</td>
+                <td>
+                    <button class="minus" data-index="${index}">-</button>
+                    <input type="text" value="${product.quantity}" class="quantity-input" data-index="${index}" readonly>
+                    <button class="plus" data-index="${index}">+</button>
+                </td>
+                <td class="subtotal">${(parseFloat(product.price.replace("$", "")) * product.quantity).toFixed(2)}</td>
+                <td><a href="#" class="item-remove" data-index="${index}">X</a></td>
+            `;
+            cartTableBody.appendChild(row);
+        });
 
-    updateCartTotals();
+        updateCartTotals();
 }
 
 function updateCartTotals() {
@@ -410,7 +410,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         
-        
         // Exibe o popup ao clicar em "Ordernow"
         document.getElementById("ordernow").addEventListener("click", function (e) {
         e.preventDefault();
@@ -443,7 +442,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         mensagem = encodeURIComponent(mensagem);
-        const whatsappLink = `https://api.whatsapp.com/send?phone=+244922987493&text=${mensagem}`;
+        const phone = '+244922987493'
+        const whatsappLink = `https://wa.me/${phone}?text=${mensagem}`;
 
         window.open(whatsappLink, "_blank");
         document.getElementById("pedido-popup").style.display = "none"; // Fecha o popup
@@ -456,7 +456,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const discount = 10.0;
         let subtotal = 0;
 
-        cart.forEach((item) => subtotal += parseFloat(item.price.replace("$", "")) * item.quantity);
+        cart.forEach((item) => subtotal += parseFloat(item.price.replace("$", " ")) * item.quantity);
         const total = subtotal - discount + deliveryFee;
 
         document.querySelector(".cart-total tbody tr:nth-child(1) td").textContent = `$${subtotal.toFixed(2)}`;

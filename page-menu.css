@@ -463,8 +463,6 @@ header .search-results {
   border-radius: 10px;
 }
 
-
-
 .popup {
   display: none; /* Inicialmente escondido */
   position: fixed;
@@ -478,7 +476,7 @@ header .search-results {
 }
 
 .popup-content {
-  background: #fff;
+  background-color: var(--light-color);
   padding: 20px;
   border-radius: 8px;
   width: 80%;
@@ -486,10 +484,28 @@ header .search-results {
   text-align: center;
 }
 
-.popup button {
-  margin: 10px;
+#form-pedido :where(#nome, #endereco, #telefone, label) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+  border-radius: 4px;
 }
-form .secondary-btn {
+#form-pedido input:where(#nome, #endereco, #telefone) {
+  border: 1px solid var(--grey-color);
+  width: 100%;
+  padding: 0.6em 0;
+  margin-left: 0.5em;
+}
+
+.popup-content .btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2em  1em  0.5em;
+}
+.popup-content .secondary-btn {
+  font-size: 1em;
   padding: 0.6em 2em;
   width: fit-content;
   height: auto;
@@ -499,24 +515,25 @@ form .secondary-btn {
   background-color: var(--primary-color);
   color: var(--dark-color);
 }
-form .secondary-btn:hover {
+.popup-content .secondary-btn:hover {
   background-color: var(--dark-color);
   color: var(--white-color);
   transition: var(--trans-back-co);
 }
-form .close-btn {
+.popup-content .close-btn {
+  font-size: 1em;
   padding: 0.6em 2em;
   width: fit-content;
   height: auto;
   border-radius: 2em;
   border: none;
   cursor: pointer;
-  background-color: var(--light-color);
-  color: var(--dark-color);
+  background-color: var(--dark-color);
+  color: var(--white-color);
 }
-form .close-btn:hover {
-  background-color: var(--secondary-color);
-  color:var(--white-color);
+.popup-content .close-btn:hover {
+  background-color: var(--dark-color);
+  color:var(--primary-color);
   transition: var(--trans-back-co);
 }
 
@@ -1207,6 +1224,35 @@ footer .copyright {
     text-align: center;
     border: none;
   }
+  .popup-content .btns {
+    display: flex;
+    justify-content:center;
+    gap: 10px;
+    align-items: stretch;
+    margin: 2em  0  0.5em;
+  }
+  .popup-content .secondary-btn {
+    font-size: 1em;
+    padding: 0.6em 2em;
+    width: fit-content;
+    height: auto;
+    border: none;
+    border-radius: 2em;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+  }
+  .popup-content .close-btn {
+    font-size: 1em;
+    padding: 0.6em 2em;
+    width: fit-content;
+    height: auto;
+    border-radius: 2em;
+    border: none;
+    cursor: pointer;
+    background-color: var(--dark-color);
+    color: var(--white-color);
+  }
 }
 
 @media screen and (max-width: 639px) {
@@ -1232,6 +1278,29 @@ footer .copyright {
     position: relative;
     top: 0;
     right: 0;
+  }
+  
+  .popup-content .secondary-btn {
+    font-size: 1em;
+    padding: 0.6em 2em;
+    width: fit-content;
+    height: auto;
+    border: none;
+    border-radius: 2em;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+  }
+  .popup-content .close-btn {
+    font-size: 1em;
+    padding: 0.6em 2em;
+    width: fit-content;
+    height: auto;
+    border-radius: 2em;
+    border: none;
+    cursor: pointer;
+    background-color: var(--dark-color);
+    color: var(--white-color);
   }
 
 }
