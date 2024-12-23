@@ -4,71 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RobeFood - Carrinho de compras</title>
+    <meta http-equiv="Content-Security-Policy" content="https://cdn.jsdelivr.net https://unpkg.com; style-src 'self' https://cdn.jsdelivr.net  img-src 'self' data:; font-src 'self' https://cdn.jsdelivr.net;">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <!--Meta Tag Open graphic-->
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="RobéFood - O Melhor Restaurante da Rua 26  no Nova vida!"/>
+    <meta property="og:image" content="https://robe-food.vercel.app/assets/hamb-1.png"/>
+    <meta property="og:description" content="Os Melhores Pratos Caseiros"/> 
+    <meta property="og:site_name" content="RobéFood"/>
+    <title>Carrinho de compras</title>
     <link rel="stylesheet" href="page-menu.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css " crossorigin="anonymous" rel="stylesheet" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 </head>
-<style>
-    .cli-popup {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    }
-
-    .clinfo {
-        background-color: white;
-        padding: 20px;
-        border-radius: 5px;
-        width: 300px;
-    }
-
-    .clinfo form {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .clinfo input, .clinfo button {
-        margin-bottom: 10px;
-    }
-</style>
-
 <body>
     <div id="page" class="cart">
         <header>
             <div class="container">
                 <nav>
                     <div class="left">
-                        <div class="logo"><a href="index.html" referrerpolicy="no-referrer">.RobéFood</a></div>
+                        <div class="logo"><a href="index.html" rel="noopenner no-referrer" referrerpolicy="no-referrer">
+                            .RobéFood</a>
+                        </div>
                         <div class="menu">
                             <ul>
-                                <li><a href="index.html" referrerpolicy="no-referrer">Home</a></li>
-                                <li><a href="page-menu.html" referrerpolicy="no-referrer" target="_blank">Menu</a></li>
-                                <li><a href="#">Entregas</a></li>
-                                <li><a href="https://www.google.com/maps/place/Rua+26,+Luanda/@-8.9025217,13.2289012,17z/data=!3m1!4b1!4m6!3m5!1s0x1a51f45209c5efb3:0x7e0576641a24ac50!8m2!3d-8.902527!4d13.2314761!16s%2Fg%2F11fmz1tdws?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D" referrerpolicy="no-referrer" target="_blank">Localização</a></li>
-                                <li><a href="contact.html" referrerpolicy="no-referrer" target="_blank">Contato</a></li>
+                                <li><a href="index.html" rel="noopenner no-referrer" referrerpolicy="no-referrer">
+                                    Home</a>
+                                </li>
+                                <li><a href="page-menu.html" rel="noopenner no-referrer" referrerpolicy="no-referrer">
+                                    Menu</a>
+                                </li>
+                                <li><a href="#">
+                                    Entregas</a>
+                                </li>
+                                <li><a href="https://www.google.com/maps/place/Rua+26,+Luanda/@-8.9025217,13.2289012,17z/data=!3m1!4b1!4m6!3m5!1s0x1a51f45209c5efb3:0x7e0576641a24ac50!8m2!3d-8.902527!4d13.2314761!16s%2Fg%2F11fmz1tdws?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D" referrerpolicy="no-referrer" target="_blank">
+                                    Localização</a>
+                                </li>
+                                <li><a href="contact.html" rel="noopenner no-referrer" referrerpolicy="no-referrer" target="_blank">
+                                    Contato</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <div class="right">
                         <div class="icons">
-                            <a href="#" class="s-trigger">
+                            <a href="#" class="s-trigger" rel="noopenner no-referrer" referrerpolicy="no-referrer">
                                 <i class="ri-search-line"></i>
                                 <i class="ri-close-line"></i>
                             </a>
                             <li class="cart-icon">
-                                <a href="cart.html" referrerpolicy="no-referrer"  class="cart-trigger">
+                                <a href="cart.html" referrerpolicy="no-referrer" rel="noopenner no-referrer"  class="cart-trigger">
                                     <i class="ri-shopping-cart-line"></i>
                                     <span id="cart-count">0</span>
                                 </a>
@@ -93,12 +85,12 @@
                     <div class="wrapper">
                         <div class="breadcrumb">
                             <ul class="flexitem">
-                                <li><a href="index.html" referrerpolicy="no-referrer">Home</a></li>
+                                <li><a href="index.html" referrerpolicy="no-referrer" rel="noopenner no-referrer">Home</a></li>
                                 <li>Carrinho</li>
                             </ul>
                         </div>
                         <div class="page-title">
-                            <h1 class="cart-title"><i class="ri-shopping-cart-line"> </i>Carrinho de compras</h1>
+                            <h1 class="cart-title"><i class="ri-shopping-cart-line"></i> Carrinho de compras</h1>
                         </div>
                         <div class="products one cart">
                             <div class="flexwrap">
@@ -171,45 +163,45 @@
             </div>
             
           </div>
-        <footer>
+          <footer>
             <div class="container">
                 <div class="wrapper">
                     <div class="widget-footer">
                         <h4>Resto</h4>
                         <ul>
-                            <li><a href="#">Sobre Nós</a></li>
-                            <li><a href="#">Destaques</a></li>
-                            <li><a href="#">Nosso Menu</a></li>
-                            <li><a href="#">Blog</a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Sobre nós">Sobre Nós</a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Destaques">Destaques</a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Nosso Menu">Nosso Menu</a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Blog">Blog</a></li>
                         </ul>
                     </div>
                     <div class="widget-footer">
                         <h4>Apoio</h4>
                         <ul>
-                            <li><a href="#">Centro de Apoio</a></li>
-                            <li><a href="#">Feedback</a></li>
-                            <li><a href="#">P e R</a></li>
-                            <li><a href="#">Contate-nos</a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Centro de Apoio">Centro de Apoio</a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Feedback">Feedback</a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="P e R">P e R</a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Contate-nos">Contate-nos</a></li>
                         </ul>
                     </div>
                     <div class="widget-footer">
-                        <div class="logo"><a href="#">.RobéFood</a></div>
+                        <div class="logo"><a href="#" rel="noopener noreferrer">.RobéFood</a></div>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, ipsum!</p>
                         <p>Urb. Nova vida. <br>Luanda, Angola</p>
                         <ul class="socials">
-                            <li><a href="#"><i class="ri-facebook-line"></i></a></li>
-                            <li><a href="#"><i class="ri-twitter-line"></i></a></li>
-                            <li><a href="#"><i class="ri-instagram-line"></i></a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Facebook"><i class="ri-facebook-line"></i></a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Twitter"><i class="ri-twitter-line"></i></a></li>
+                            <li><a href="#" rel="noopener noreferrer" aria-label="Instagram"><i class="ri-instagram-line"></i></a></li>
                         </ul>
                     </div>
                 </div>
-                <p class="copyright">&copy 2024 .RobéBusiness &reg;.Todos os direitos reservados.</p>
+                <p class="copyright">&copy 2024 .RobéFood &reg;. Todos os direitos reservados.</p>
             </div>
+            
         </footer>
     </div>
     <div class="overlay"></div>
     <script>
-
         // Função para mostrar o menu Hamburguer para mobile
         document.addEventListener("DOMContentLoaded", updateCartCount);
         const divtoShow = "nav .menu";
@@ -231,49 +223,49 @@
             const cart = JSON.parse(localStorage.getItem("cart")) || [];
             cartTableBody.innerHTML = "";
 
-            cart.forEach((product, index) => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-                <td><img src="${product.image}" alt="${product.name}"><strong>${product.name}</strong></td>
-                <td>${product.price}</td>
-                <td>
-                    <button class="minus" data-index="${index}">-</button>
-                    <input type="text" value="${product.quantity}" class="quantity-input" data-index="${index}" readonly>
-                    <button class="plus" data-index="${index}">+</button>
-                </td>
-                <td class="subtotal">${(parseFloat(product.price.replace("$", "")) * product.quantity).toFixed(2)}</td>
-                <td><a href="#" class="item-remove" data-index="${index}">X</a></td>
-            `;
-            cartTableBody.appendChild(row);
+                cart.forEach((product, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td><img src="${product.image}" alt="${product.name}"><strong>${product.name}</strong></td>
+                    <td>${product.price}</td>
+                    <td>
+                        <button class="minus" data-index="${index}">-</button>
+                        <input type="text" value="${product.quantity}" class="quantity-input" data-index="${index}" readonly>
+                        <button class="plus" data-index="${index}">+</button>
+                    </td>
+                    <td class="subtotal">${(parseFloat(product.price.replace("$", "")) * product.quantity).toFixed(2)}</td>
+                    <td><a href="#" class="item-remove" data-index="${index}">X</a></td>
+                `;
+                cartTableBody.appendChild(row);
+            });
+
+            updateCartTotals();
+        }
+
+        function updateCartTotals() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const deliveryFee = 100.0;
+            const discount = 10.0;
+            let subtotal = 0;
+
+            cart.forEach((item) => subtotal += parseFloat(item.price.replace("$", "")) * item.quantity);
+            const total = subtotal - discount + deliveryFee;
+
+            document.querySelector(".cart-total .subtotal").textContent = `$${subtotal.toFixed(2)}`;
+            document.querySelector(".cart-total .discount").textContent = `$${discount.toFixed(2)}`;
+            document.querySelector(".cart-total .delivery-fee").textContent = `$${deliveryFee.toFixed(2)}`;
+            document.querySelector(".cart-total .total").textContent = `$${total.toFixed(2)}`;
+        }
+
+        window.addEventListener("storage", function (e) {
+            if (e.key === "cart") {
+                renderCart();
+            }
         });
 
-        updateCartTotals();
-}
-
-function updateCartTotals() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const deliveryFee = 100.0;
-    const discount = 10.0;
-    let subtotal = 0;
-
-    cart.forEach((item) => subtotal += parseFloat(item.price.replace("$", "")) * item.quantity);
-    const total = subtotal - discount + deliveryFee;
-
-    document.querySelector(".cart-total .subtotal").textContent = `$${subtotal.toFixed(2)}`;
-    document.querySelector(".cart-total .discount").textContent = `$${discount.toFixed(2)}`;
-    document.querySelector(".cart-total .delivery-fee").textContent = `$${deliveryFee.toFixed(2)}`;
-    document.querySelector(".cart-total .total").textContent = `$${total.toFixed(2)}`;
-}
-
-window.addEventListener("storage", function (e) {
-    if (e.key === "cart") {
-        renderCart();
-    }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    renderCart();
-});
+        document.addEventListener("DOMContentLoaded", function () {
+            renderCart();
+        });
 
 
         
@@ -412,57 +404,57 @@ document.addEventListener("DOMContentLoaded", function () {
         
         // Exibe o popup ao clicar em "Ordernow"
         document.getElementById("ordernow").addEventListener("click", function (e) {
-        e.preventDefault();
-        document.getElementById("pedido-popup").style.display = "flex";
-        updateCartTotals();
+            e.preventDefault();
+            document.getElementById("pedido-popup").style.display = "flex";
+            updateCartTotals();
         });
 
         // Fecha o popup ao clicar em "Fechar"
         document.getElementById("fechar-popup").addEventListener("click", function () {
-        document.getElementById("pedido-popup").style.display = "none";
+            document.getElementById("pedido-popup").style.display = "none";
         });
 
         // Envia o pedido via WhatsApp ao clicar em "Finalizar Pedido"
         document.getElementById("finalizar-pedido").addEventListener("click", function () {
-        const nome = document.getElementById("nome").value;
-        const telefone = document.getElementById("telefone").value;
-        const endereco = document.getElementById("endereco").value;
+            const nome = document.getElementById("nome").value;
+            const telefone = document.getElementById("telefone").value;
+            const endereco = document.getElementById("endereco").value;
 
-        if (!nome || !telefone || !endereco) {
-            alert("Preencha todos os campos.");
-            return;
-        }
+            if (!nome || !telefone || !endereco) {
+                alert("Preencha todos os campos.");
+                return;
+            }
 
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
-        let mensagem = `(* Novo Pedido *)\n Cliente: ${nome}\n | Telefone: ${telefone}\n | Endereço: ${endereco}\n\n|`;
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let mensagem = `(* Novo Pedido *)\n Cliente: ${nome}\n | Telefone: ${telefone}\n | Endereço: ${endereco}\n\n|`;
 
-        cart.forEach((product) => {
-            const totalItem = parseFloat(product.price.replace("$", "")) * product.quantity;
-            mensagem += ` Produto: ${product.name}\n | Quantidade: ${product.quantity}\n | Total: $${totalItem.toFixed(2)}\n |`;
-        });
+            cart.forEach((product) => {
+                const totalItem = parseFloat(product.price.replace("$", "")) * product.quantity;
+                mensagem += ` Produto: ${product.name}\n | Quantidade: ${product.quantity}\n | Total: $${totalItem.toFixed(2)}\n |`;
+            });
 
-        mensagem = encodeURIComponent(mensagem);
-        const phone = '+244922987493'
-        const whatsappLink = `https://wa.me/${phone}?text=${mensagem}`;
+            mensagem = encodeURIComponent(mensagem);
+            const phone = '+244922987493'
+            const whatsappLink = `https://wa.me/${phone}?text=${mensagem}`;
 
-        window.open(whatsappLink, "_blank");
-        document.getElementById("pedido-popup").style.display = "none"; // Fecha o popup
+            window.open(whatsappLink, "_blank");
+            document.getElementById("pedido-popup").style.display = "none"; // Fecha o popup
         });
 
         // Atualiza os totais do carrinho no popup
         function updateCartTotals() {
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
-        const deliveryFee = 100.0;
-        const discount = 10.0;
-        let subtotal = 0;
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const deliveryFee = 100.0;
+            const discount = 10.0;
+            let subtotal = 0;
 
-        cart.forEach((item) => subtotal += parseFloat(item.price.replace("$", " ")) * item.quantity);
-        const total = subtotal - discount + deliveryFee;
+            cart.forEach((item) => subtotal += parseFloat(item.price.replace("$", " ")) * item.quantity);
+            const total = subtotal - discount + deliveryFee;
 
-        document.querySelector(".cart-total tbody tr:nth-child(1) td").textContent = `$${subtotal.toFixed(2)}`;
-        document.querySelector(".cart-total tbody tr:nth-child(2) td").textContent = `$${discount.toFixed(2)}`;
-        document.querySelector(".cart-total tbody tr:nth-child(3) td").textContent = `$${deliveryFee.toFixed(2)}`;
-        document.querySelector(".cart-total tbody tr.grand-total td strong").textContent = `$${total.toFixed(2)}`;
+            document.querySelector(".cart-total tbody tr:nth-child(1) td").textContent = `$${subtotal.toFixed(2)}`;
+            document.querySelector(".cart-total tbody tr:nth-child(2) td").textContent = `$${discount.toFixed(2)}`;
+            document.querySelector(".cart-total tbody tr:nth-child(3) td").textContent = `$${deliveryFee.toFixed(2)}`;
+            document.querySelector(".cart-total tbody tr.grand-total td strong").textContent = `$${total.toFixed(2)}`;
         }
 
     </script>

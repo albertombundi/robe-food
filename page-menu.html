@@ -9,9 +9,16 @@
         <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
         <meta http-equiv="X-XSS-Protection" content="1; mode=block">
         <meta name="referrer" content="strict-origin-when-cross-origin">
-        <title>RobéFood - Menu Restaurante</title>
+        <!--Meta Tag Open graphic-->
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="RobéFood - O Melhor Restaurante da Rua 26  no Nova vida!"/>
+        <meta property="og:image" content="https://robe-food.vercel.app/assets/hamb-1.png"/>
+        <meta property="og:description" content="Os Melhores Pratos Caseiros"/> 
+        <meta property="og:site_name" content="RobéFood"/>
+        <title>Menu completo</title>
         <link rel="stylesheet" href="page-menu.css">
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -25,37 +32,46 @@
                 <nav>
                     <div class="left">
                         <div class="logo">
-                            <a href="index.html" referrerpolicy="no-referrer">.RobéFood</a>
+                            <a href="index.html" rel="noopener noreferrer" referrerpolicy="no-referrer">
+                                .RobéFood</a>
                         </div>
                         <div class="menu">
                             <ul>
-                                <li><a href="index.html" referrerpolicy="no-referrer">Home</a></li>
-                                <li><a href="page-menu.html" referrerpolicy="no-referrer">Menu</a></li>
-                                <li><a href="#">Entregas</a></li>
+                                <li><a href="index.html" rel="noopener noreferrer" referrerpolicy="no-referrer">
+                                    Home</a>
+                                </li>
+                                <li><a href="page-menu.html" rel="noopener noreferrer" referrerpolicy="no-referrer">
+                                    Menu</a>
+                                </li>
+                                <li><a href="#" rel="noopener noreferrer">
+                                    Entregas</a>
+                                </li>
                                 <li>
                                     <a href="https://www.google.com/maps/place/Rua+26,+Luanda/@-8.9025217,13.2289012,17z/data=!3m1!4b1!4m6!3m5!1s0x1a51f45209c5efb3:0x7e0576641a24ac50!8m2!3d-8.902527!4d13.2314761!16s%2Fg%2F11fmz1tdws?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D"
                                         referrerpolicy="no-referrer" target="_blank" rel="noopener noreferrer">
                                         Localização
                                     </a>
                                 </li>
-                                <li><a href="contact.html" referrerpolicy="no-referrer">Contato</a></li>
+                                <li><a href="contact.html" rel="noopener no-referrer" referrerpolicy="no-referrer">
+                                    Contato</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <div class="right">
                         <div class="icons">
-                            <a href="#" class="s-trigger">
+                            <a href="#" class="s-trigger" aria-label="Abrir barra de pesquisa">
                                 <i class="ri-search-line"></i>
                                 <i class="ri-close-line"></i>
                             </a>
                             <!-- Ícone do carrinho com contagem de itens -->
                             <li class="cart-icon">
-                                <a href="cart.html" rel="noopener noreferrer" referrerpolicy="no-referrer" target="_blank" class="cart-trigger">
+                                <a href="cart.html" rel="noopener noreferrer" referrerpolicy="no-referrer" class="cart-trigger" aria-label="Ir para o carrinho de compras">
                                     <i class="ri-shopping-cart-line"></i>
                                     <span id="cart-count">0</span>
                                 </a>
                             </li>
-                            <a href="#" class="m-trigger mobile-only">
+                            <a href="#" class="m-trigger mobile-only" rel="noopener no-referrer" referrerpolicy="no-referrer">
                                 <i class="ri-menu-line"></i>
                             </a>
                         </div>
@@ -98,6 +114,7 @@
                         <div class="products">
                             <div>
                                 <ul>
+
                                     <li class="item">
                                         <div class="thumbnail covering">
                                             <a href="#" rel="noopener noreferrer">
@@ -124,7 +141,7 @@
                                                         aria-label="Adicionar Pastelaria é bom no carrinho">
                                                     Adicionar no carrinho
                                                 </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" target="_blank" 
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
                                                    class="cart-icon-page" rel="noopener noreferrer">
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </a>
@@ -134,180 +151,32 @@
                                     
                                     <li class="item">
                                         <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/baked2.jpg" alt="">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/products/baked1.jpg" alt="Assados no forno">
                                             </a>
                                         </div>
                                         <div class="meta">
                                             <div class="catrate">
-                                                <span class="cat"><a href="#">Assados no forno</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.7</span>
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Assados no forno</a>
                                                 </span>
-                                            </div>
-                                            <h2><a href="">Pastelaria lorem</a></h2>
-                                            <div class="price">
-                                                <strong class="current">$11.99</strong>
-                                            </div>
-                                            <div class="buttons">
-                                                <button data-name="Pastelaria lorem upsum dolor sit amet"
-                                                    data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/baked2.jpg">
-                                                    Adicionar no carrinho
-                                                </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
-                                                    <i class="ri-shopping-cart-line"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/baked3.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Assados no forno</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
-                                            <div class="price">
-                                                <strong class="current">$11.99</strong>
-                                            </div>
-                                            <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/baked3.jpg">
-                                                    Adicionar no carrinho
-                                                </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
-                                                    <i class="ri-shopping-cart-line"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/baked4.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Assados no forno</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
-                                            <div class="price">
-                                                <strong class="current">$11.99</strong>
-                                            </div>
-                                            <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/baked4.jpg">
-                                                    Adicionar no carrinho
-                                                </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
-                                                    <i class="ri-shopping-cart-line"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/baked5.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Assados no forno</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
-                                            <div class="price">
-                                                <strong class="current">$11.99</strong>
-                                            </div>
-                                            <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/baked5.jpg">
-                                                    Adicionar no carrinho
-                                                </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
-                                                    <i class="ri-shopping-cart-line"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/baked6.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Assados no forno</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Cupcakes Feitos em casa</a></h2>
-                                            <div class="price">
-                                                <strong class="current">$11.99</strong>
-                                            </div>
-                                            <div class="buttons">
-                                                <button data-name="Cupcakes cozinhados em casa" data-price="11.99"
-                                                    data-quantity="1" data-image="assets/products/baked6.jpg">
-                                                    Adicionar no carrinho
-                                                </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
-                                                    <i class="ri-shopping-cart-line"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/baked7.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Assados no forno</a></span>
                                                 <span class="rating">
                                                     <i class="ri-star-fill"></i>
                                                     <span>4.9</span>
                                                 </span>
                                             </div>
-                                            <h2><a href="#">Cupcakes Feitos em casa</a></h2>
+                                            <h2><a href="#" rel="noopener noreferrer">Pastelaria é bom</a></h2>
                                             <div class="price">
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button data-name="Cupcakes cozinhados em casa" data-price="11.99"
-                                                    data-quantity="1" data-image="assets/products/baked7.jpg">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
                                                     Adicionar no carrinho
                                                 </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </a>
                                             </div>
@@ -315,29 +184,32 @@
                                     </li>
                                     <li class="item">
                                         <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/baked8.jpg" alt="">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/products/baked3.jpg" alt="Assados no forno">
                                             </a>
                                         </div>
                                         <div class="meta">
                                             <div class="catrate">
-                                                <span class="cat"><a href="#">Assados no forno</a></span>
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Assados no forno</a>
+                                                </span>
                                                 <span class="rating">
                                                     <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
+                                                    <span>4.9</span>
                                                 </span>
                                             </div>
-                                            <h2><a href="#">Bolo caseiro lorem</a></h2>
+                                            <h2><a href="#" rel="noopener noreferrer">Pastelaria é bom</a></h2>
                                             <div class="price">
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button data-name="Bolo caseiro lorem" data-price="11.99"
-                                                    data-quantity="1" data-image="assets/products/baked8.jpg">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
                                                     Adicionar no carrinho
                                                 </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </a>
                                             </div>
@@ -345,29 +217,197 @@
                                     </li>
                                     <li class="item">
                                         <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/baked1.jpg" alt="">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/products/baked4.jpg" alt="Assados no forno">
                                             </a>
                                         </div>
                                         <div class="meta">
                                             <div class="catrate">
-                                                <span class="cat"><a href="#">Assados no forno</a></span>
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Assados no forno</a>
+                                                </span>
                                                 <span class="rating">
                                                     <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
+                                                    <span>4.9</span>
                                                 </span>
                                             </div>
-                                            <h2><a href="">Bolo caseiro</a></h2>
+                                            <h2><a href="#" rel="noopener noreferrer">Pastelaria é bom</a></h2>
                                             <div class="price">
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button data-name="Bolo caseiro" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/baked1.jpg">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
                                                     Adicionar no carrinho
                                                 </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
+                                                    <i class="ri-shopping-cart-line"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <div class="thumbnail covering">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/products/baked5.jpg" alt="Assados no forno">
+                                            </a>
+                                        </div>
+                                        <div class="meta">
+                                            <div class="catrate">
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Assados no forno</a>
+                                                </span>
+                                                <span class="rating">
+                                                    <i class="ri-star-fill"></i>
+                                                    <span>4.9</span>
+                                                </span>
+                                            </div>
+                                            <h2><a href="#" rel="noopener noreferrer">Pastelaria é bom</a></h2>
+                                            <div class="price">
+                                                <strong class="current">$11.99</strong>
+                                            </div>
+                                            <div class="buttons">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
+                                                    Adicionar no carrinho
+                                                </button>
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
+                                                    <i class="ri-shopping-cart-line"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <div class="thumbnail covering">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/products/baked6.jpg" alt="Assados no forno">
+                                            </a>
+                                        </div>
+                                        <div class="meta">
+                                            <div class="catrate">
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Assados no forno</a>
+                                                </span>
+                                                <span class="rating">
+                                                    <i class="ri-star-fill"></i>
+                                                    <span>4.9</span>
+                                                </span>
+                                            </div>
+                                            <h2><a href="#" rel="noopener noreferrer">Pastelaria é bom</a></h2>
+                                            <div class="price">
+                                                <strong class="current">$11.99</strong>
+                                            </div>
+                                            <div class="buttons">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
+                                                    Adicionar no carrinho
+                                                </button>
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
+                                                    <i class="ri-shopping-cart-line"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <div class="thumbnail covering">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/products/baked7.jpg" alt="Assados no forno">
+                                            </a>
+                                        </div>
+                                        <div class="meta">
+                                            <div class="catrate">
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Assados no forno</a>
+                                                </span>
+                                                <span class="rating">
+                                                    <i class="ri-star-fill"></i>
+                                                    <span>4.9</span>
+                                                </span>
+                                            </div>
+                                            <h2><a href="#" rel="noopener noreferrer">Pastelaria é bom</a></h2>
+                                            <div class="price">
+                                                <strong class="current">$11.99</strong>
+                                            </div>
+                                            <div class="buttons">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
+                                                    Adicionar no carrinho
+                                                </button>
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
+                                                    <i class="ri-shopping-cart-line"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <div class="thumbnail covering">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/products/baked8.jpg" alt="Assados no forno">
+                                            </a>
+                                        </div>
+                                        <div class="meta">
+                                            <div class="catrate">
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Assados no forno</a>
+                                                </span>
+                                                <span class="rating">
+                                                    <i class="ri-star-fill"></i>
+                                                    <span>4.9</span>
+                                                </span>
+                                            </div>
+                                            <h2><a href="#" rel="noopener noreferrer">Pastelaria é bom</a></h2>
+                                            <div class="price">
+                                                <strong class="current">$11.99</strong>
+                                            </div>
+                                            <div class="buttons">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
+                                                    Adicionar no carrinho
+                                                </button>
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
+                                                    <i class="ri-shopping-cart-line"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <div class="thumbnail covering">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/products/baked9.jpg" alt="Assados no forno">
+                                            </a>
+                                        </div>
+                                        <div class="meta">
+                                            <div class="catrate">
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Assados no forno</a>
+                                                </span>
+                                                <span class="rating">
+                                                    <i class="ri-star-fill"></i>
+                                                    <span>4.9</span>
+                                                </span>
+                                            </div>
+                                            <h2><a href="#" rel="noopener noreferrer">Pastelaria é bom</a></h2>
+                                            <div class="price">
+                                                <strong class="current">$11.99</strong>
+                                            </div>
+                                            <div class="buttons">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
+                                                    Adicionar no carrinho
+                                                </button>
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </a>
                                             </div>
@@ -376,7 +416,7 @@
                                     <li class="item">
                                         <div class="thumbnail covering">
                                             <a href="#">
-                                                <img src="assets/products/baked9.jpg" alt="">
+                                                <img src="assets/products/garnish6.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="meta">
@@ -412,31 +452,32 @@
                                 <ul>
                                     <li class="item">
                                         <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish1.jpg" alt="">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/products/garnish1.jpg" alt="Pratos & Decorações">
                                             </a>
                                         </div>
                                         <div class="meta">
                                             <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Pratos & Decorações</a>
+                                                </span>
                                                 <span class="rating">
                                                     <i class="ri-star-fill"></i>
                                                     <span>4.9</span>
                                                 </span>
                                             </div>
-                                            <h2><a href="">Sushi</a></h2>
+                                            <h2><a href="#" rel="noopener noreferrer">Sushi</a></h2>
                                             <div class="price">
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button 
-                                                    data-name="Sushi ah sushi de novo" data-price="11.99"
-                                                    data-quantity="1" 
-                                                    data-image="assets/products/garnish1.jpg">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
                                                     Adicionar no carrinho
                                                 </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </a>
                                             </div>
@@ -444,30 +485,32 @@
                                     </li>
                                     <li class="item">
                                         <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish2.jpg" alt="">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/products/garnish2.jpg" alt="Pratos & Decorações">
                                             </a>
                                         </div>
                                         <div class="meta">
                                             <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Pratos & Decorações</a>
+                                                </span>
                                                 <span class="rating">
                                                     <i class="ri-star-fill"></i>
-                                                    <span>4.7</span>
+                                                    <span>4.9</span>
                                                 </span>
                                             </div>
-                                            <h2><a href="">Dolor Cupcakes sectetur</a></h2>
+                                            <h2><a href="#" rel="noopener noreferrer">Sushi</a></h2>
                                             <div class="price">
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button data-name="Lorem upsum dolor sit amet consectetur"
-                                                    data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/garnish2.jpg">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
                                                     Adicionar no carrinho
                                                 </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </a>
                                             </div>
@@ -475,29 +518,32 @@
                                     </li>
                                     <li class="item">
                                         <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish3.jpg" alt="">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/products/garnish3.jpg" alt="Pratos & Decorações">
                                             </a>
                                         </div>
                                         <div class="meta">
                                             <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Pratos & Decorações</a>
+                                                </span>
                                                 <span class="rating">
                                                     <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
+                                                    <span>4.9</span>
                                                 </span>
                                             </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
+                                            <h2><a href="#" rel="noopener noreferrer">Sushi</a></h2>
                                             <div class="price">
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/garnish3.jpg">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
                                                     Adicionar no carrinho
                                                 </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </a>
                                             </div>
@@ -505,29 +551,32 @@
                                     </li>
                                     <li class="item">
                                         <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish4.jpg" alt="">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/products/garnish4.jpg" alt="Pratos & Decorações">
                                             </a>
                                         </div>
                                         <div class="meta">
                                             <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Pratos & Decorações</a>
+                                                </span>
                                                 <span class="rating">
                                                     <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
+                                                    <span>4.9</span>
                                                 </span>
                                             </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
+                                            <h2><a href="#" rel="noopener noreferrer">Sushi</a></h2>
                                             <div class="price">
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/garnish4.jpg">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
                                                     Adicionar no carrinho
                                                 </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </a>
                                             </div>
@@ -535,179 +584,32 @@
                                     </li>
                                     <li class="item">
                                         <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish5.jpg" alt="">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/products/garnish5.jpg" alt="Pratos & Decorações">
                                             </a>
                                         </div>
                                         <div class="meta">
                                             <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Pratos & Decorações</a>
+                                                </span>
                                                 <span class="rating">
                                                     <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
+                                                    <span>4.9</span>
                                                 </span>
                                             </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
+                                            <h2><a href="#" rel="noopener noreferrer">Sushi</a></h2>
                                             <div class="price">
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/garnish5.jpg">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
                                                     Adicionar no carrinho
                                                 </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
-                                                    <i class="ri-shopping-cart-line"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish6.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
-                                            <div class="price">
-                                                <strong class="current">$11.99</strong>
-                                            </div>
-                                            <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/garnish6.jpg">
-                                                    Adicionar no carrinho
-                                                </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
-                                                    <i class="ri-shopping-cart-line"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish6.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
-                                            <div class="price">
-                                                <strong class="current">$11.99</strong>
-                                            </div>
-                                            <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/garnish6.jpg">
-                                                    Adicionar no carrinho
-                                                </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
-                                                    <i class="ri-shopping-cart-line"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish6.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
-                                            <div class="price">
-                                                <strong class="current">$11.99</strong>
-                                            </div>
-                                            <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/garnish6.jpg">
-                                                    Adicionar no carrinho
-                                                </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
-                                                    <i class="ri-shopping-cart-line"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish6.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
-                                            <div class="price">
-                                                <strong class="current">$11.99</strong>
-                                            </div>
-                                            <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/garnish6.jpg">
-                                                    Adicionar no carrinho
-                                                </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
-                                                    <i class="ri-shopping-cart-line"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish6.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
-                                            <div class="price">
-                                                <strong class="current">$11.99</strong>
-                                            </div>
-                                            <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/garnish6.jpg">
-                                                    Adicionar no carrinho
-                                                </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </a>
                                             </div>
@@ -721,59 +623,32 @@
                                 <ul>
                                     <li class="item">
                                         <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/herbs1.jpg" alt="">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/products/herbs1.jpg" alt="Pratos & Decorações">
                                             </a>
                                         </div>
                                         <div class="meta">
                                             <div class="catrate">
-                                                <span class="cat"><a href="#">Hervas & Temperos</a></span>
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Hervas & Temperos</a>
+                                                </span>
                                                 <span class="rating">
                                                     <i class="ri-star-fill"></i>
                                                     <span>4.9</span>
                                                 </span>
                                             </div>
-                                            <h2><a href="">Sushi ah sushi de novo</a></h2>
+                                            <h2><a href="#" rel="noopener noreferrer">Dolor lorem, ipsum dolor..</a></h2>
                                             <div class="price">
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button data-name="Sushi ah sushi de novo" data-price="11.99"
-                                                    data-quantity="1" data-image="assets/products/herbs1.jpg">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
                                                     Adicionar no carrinho
                                                 </button>
-                                                <a href="#" class="like">
-                                                    <i class="ri-heart-line"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/herbs2.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Hervas & Temperos</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.7</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Dolor lorem upsum</a></h2>
-                                            <div class="price">
-                                                <strong class="current">$11.99</strong>
-                                            </div>
-                                            <div class="buttons">
-                                                <button data-name="Lorem upsum dolor sit amet consectetur"
-                                                    data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/herbs2.jpg">
-                                                    Adicionar no carrinho
-                                                </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </a>
                                             </div>
@@ -781,58 +656,32 @@
                                     </li>
                                     <li class="item">
                                         <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/herbs3.jpg" alt="">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/products/herbs2.jpg" alt="Pratos & Decorações">
                                             </a>
                                         </div>
                                         <div class="meta">
                                             <div class="catrate">
-                                                <span class="cat"><a href="#">Hervas & Temperos</a></span>
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Hervas & Temperos</a>
+                                                </span>
                                                 <span class="rating">
                                                     <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
+                                                    <span>4.9</span>
                                                 </span>
                                             </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
+                                            <h2><a href="#" rel="noopener noreferrer">Dolor lorem, ipsum dolor..</a></h2>
                                             <div class="price">
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/herbs3.jpg">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
                                                     Adicionar no carrinho
                                                 </button>
-                                                <a href="#" class="like">
-                                                    <i class="ri-heart-line"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/herbs4.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Hervas & Temperos</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
-                                            <div class="price">
-                                                <strong class="current">$11.99</strong>
-                                            </div>
-                                            <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/herbs4.jpg">
-                                                    Adicionar no carrinho
-                                                </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </a>
                                             </div>
@@ -840,29 +689,98 @@
                                     </li>
                                     <li class="item">
                                         <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/herbs5.jpg" alt="">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/products/herbs3.jpg" alt="Pratos & Decorações">
                                             </a>
                                         </div>
                                         <div class="meta">
                                             <div class="catrate">
-                                                <span class="cat"><a href="#">Hervas & Temperos</a></span>
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Hervas & Temperos</a>
+                                                </span>
                                                 <span class="rating">
                                                     <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
+                                                    <span>4.9</span>
                                                 </span>
                                             </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
+                                            <h2><a href="#" rel="noopener noreferrer">Dolor lorem, ipsum dolor..</a></h2>
                                             <div class="price">
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/herbs5.jpg">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
                                                     Adicionar no carrinho
                                                 </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
+                                                    <i class="ri-shopping-cart-line"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <div class="thumbnail covering">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/products/herbs4.jpg" alt="Pratos & Decorações">
+                                            </a>
+                                        </div>
+                                        <div class="meta">
+                                            <div class="catrate">
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Hervas & Temperos</a>
+                                                </span>
+                                                <span class="rating">
+                                                    <i class="ri-star-fill"></i>
+                                                    <span>4.9</span>
+                                                </span>
+                                            </div>
+                                            <h2><a href="#" rel="noopener noreferrer">Dolor lorem, ipsum dolor..</a></h2>
+                                            <div class="price">
+                                                <strong class="current">$11.99</strong>
+                                            </div>
+                                            <div class="buttons">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
+                                                    Adicionar no carrinho
+                                                </button>
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
+                                                    <i class="ri-shopping-cart-line"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <div class="thumbnail covering">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/products/herbs5.jpg" alt="Pratos & Decorações">
+                                            </a>
+                                        </div>
+                                        <div class="meta">
+                                            <div class="catrate">
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Hervas & Temperos</a>
+                                                </span>
+                                                <span class="rating">
+                                                    <i class="ri-star-fill"></i>
+                                                    <span>4.9</span>
+                                                </span>
+                                            </div>
+                                            <h2><a href="#" rel="noopener noreferrer">Dolor lorem, ipsum dolor..</a></h2>
+                                            <div class="price">
+                                                <strong class="current">$11.99</strong>
+                                            </div>
+                                            <div class="buttons">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
+                                                    Adicionar no carrinho
+                                                </button>
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </a>
                                             </div>
@@ -876,29 +794,32 @@
                                 <ul>
                                     <li class="item">
                                         <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish1.jpg" alt="">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/slider/food1.png" alt="Pratos & Decorações">
                                             </a>
                                         </div>
                                         <div class="meta">
                                             <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Pratos & Decorações</a>
+                                                </span>
                                                 <span class="rating">
                                                     <i class="ri-star-fill"></i>
                                                     <span>4.9</span>
                                                 </span>
                                             </div>
-                                            <h2><a href="">Sushi ah sushi de novo</a></h2>
+                                            <h2><a href="#" rel="noopener noreferrer">Dolor lorem, ipsum dolor..</a></h2>
                                             <div class="price">
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button data-name="Sushi ah sushi de novo" data-price="11.99"
-                                                    data-quantity="1" data-image="assets/products/garnish1.jpg">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
                                                     Adicionar no carrinho
                                                 </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </a>
                                             </div>
@@ -906,30 +827,32 @@
                                     </li>
                                     <li class="item">
                                         <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish2.jpg" alt="">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/slider/food2.png" alt="Pratos & Decorações">
                                             </a>
                                         </div>
                                         <div class="meta">
                                             <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Pratos & Decorações</a>
+                                                </span>
                                                 <span class="rating">
                                                     <i class="ri-star-fill"></i>
-                                                    <span>4.7</span>
+                                                    <span>4.9</span>
                                                 </span>
                                             </div>
-                                            <h2><a href="#">Lorem upsum dolor</a></h2>
+                                            <h2><a href="#" rel="noopener noreferrer">Dolor lorem, ipsum dolor..</a></h2>
                                             <div class="price">
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button data-name="Lorem upsum dolor sit amet consectetur"
-                                                    data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/garnish2.jpg">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
                                                     Adicionar no carrinho
                                                 </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </a>
                                             </div>
@@ -937,29 +860,32 @@
                                     </li>
                                     <li class="item">
                                         <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish3.jpg" alt="">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/slider/food3.png" alt="Pratos & Decorações">
                                             </a>
                                         </div>
                                         <div class="meta">
                                             <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Pratos & Decorações</a>
+                                                </span>
                                                 <span class="rating">
                                                     <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
+                                                    <span>4.9</span>
                                                 </span>
                                             </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
+                                            <h2><a href="#" rel="noopener noreferrer">Dolor lorem, ipsum dolor..</a></h2>
                                             <div class="price">
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/garnish3.jpg">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
                                                     Adicionar no carrinho
                                                 </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </a>
                                             </div>
@@ -967,29 +893,32 @@
                                     </li>
                                     <li class="item">
                                         <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish4.jpg" alt="">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/slider/food5.png" alt="Pratos & Decorações">
                                             </a>
                                         </div>
                                         <div class="meta">
                                             <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Pratos & Decorações</a>
+                                                </span>
                                                 <span class="rating">
                                                     <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
+                                                    <span>4.9</span>
                                                 </span>
                                             </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
+                                            <h2><a href="#" rel="noopener noreferrer">Dolor lorem, ipsum dolor..</a></h2>
                                             <div class="price">
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/garnish4.jpg">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
                                                     Adicionar no carrinho
                                                 </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </a>
                                             </div>
@@ -997,179 +926,32 @@
                                     </li>
                                     <li class="item">
                                         <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish5.jpg" alt="">
+                                            <a href="#" rel="noopener noreferrer">
+                                                <img src="assets/slider/food6.png" alt="Pratos & Decorações">
                                             </a>
                                         </div>
                                         <div class="meta">
                                             <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
+                                                <span class="cat">
+                                                    <a href="#" rel="noopener noreferrer">Pratos & Decorações</a>
+                                                </span>
                                                 <span class="rating">
                                                     <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
+                                                    <span>4.9</span>
                                                 </span>
                                             </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
+                                            <h2><a href="#" rel="noopener noreferrer">Dolor lorem, ipsum dolor..</a></h2>
                                             <div class="price">
                                                 <strong class="current">$11.99</strong>
                                             </div>
                                             <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/garnish5.jpg">
+                                                <button data-name="Pastelaria é bom" data-price="11.99"
+                                                        data-quantity="1" data-image="assets/products/baked1.jpg"
+                                                        aria-label="Adicionar Pastelaria é bom no carrinho">
                                                     Adicionar no carrinho
                                                 </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
-                                                    <i class="ri-shopping-cart-line"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish6.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
-                                            <div class="price">
-                                                <strong class="current">$11.99</strong>
-                                            </div>
-                                            <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/garnish6.jpg">
-                                                    Adicionar no carrinho
-                                                </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
-                                                    <i class="ri-shopping-cart-line"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish6.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
-                                            <div class="price">
-                                                <strong class="current">$11.99</strong>
-                                            </div>
-                                            <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/garnish6.jpg">
-                                                    Adicionar no carrinho
-                                                </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
-                                                    <i class="ri-shopping-cart-line"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish6.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
-                                            <div class="price">
-                                                <strong class="current">$11.99</strong>
-                                            </div>
-                                            <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/garnish6.jpg">
-                                                    Adicionar no carrinho
-                                                </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
-                                                    <i class="ri-shopping-cart-line"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish6.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
-                                            <div class="price">
-                                                <strong class="current">$11.99</strong>
-                                            </div>
-                                            <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/garnish6.jpg">
-                                                    Adicionar no carrinho
-                                                </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
-                                                    <i class="ri-shopping-cart-line"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <div class="thumbnail covering">
-                                            <a href="#">
-                                                <img src="assets/products/garnish6.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="meta">
-                                            <div class="catrate">
-                                                <span class="cat"><a href="#">Decorações</a></span>
-                                                <span class="rating">
-                                                    <i class="ri-star-fill"></i>
-                                                    <span>4.5</span>
-                                                </span>
-                                            </div>
-                                            <h2><a href="">Dolor Cupcakes</a></h2>
-                                            <div class="price">
-                                                <strong class="current">$11.99</strong>
-                                            </div>
-                                            <div class="buttons">
-                                                <button data-name="Dolor Cupcakes" data-price="11.99" data-quantity="1"
-                                                    data-image="assets/products/garnish6.jpg">
-                                                    Adicionar no carrinho
-                                                </button>
-                                                <a href="cart.html" referrerpolicy="no-referrer" class="cart-icon-page">
-
+                                                <a href="cart.html" referrerpolicy="no-referrer" 
+                                                   class="cart-icon-page" rel="noopener noreferrer">
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </a>
                                             </div>
@@ -1669,21 +1451,21 @@
             }
         }
 
-        // Função para mostrar a barra de buscar
+        //---Função para mostrar a barra de buscar
         const sTrigger = document.querySelector(".s-trigger");
         const addclass = document.querySelector(".menu");
         sTrigger.addEventListener("click", () => {
             addclass.classList.toggle("showsearch");
         });
 
-        // Adicione um listener para mudanças no localStorage
+        //---Adicione um listener para mudanças no localStorage
         window.addEventListener("storage", function (e) {
             if (e.key === "cart") {
                 updateCartCount();
             }
         });
 
-        // Chama esta função quando a página carregar
+        //---Chama esta função quando a página carregar
         document.addEventListener("DOMContentLoaded", updateCartCount);
             const divtoShow = "nav .menu";
             const divPopup = document.querySelector(divtoShow);
@@ -1708,7 +1490,7 @@
             }
         });
 
-        // Função para atualizar o carrinho
+        //---Função para atualizar o carrinho
         function updateCart(product, action) {
             let cart = JSON.parse(localStorage.getItem("cart")) || [];
             const existingProductIndex = cart.findIndex(
@@ -1732,7 +1514,7 @@
         return cart;
         }
 
-        // Função para remover item do carrinho
+        //---Função para remover item do carrinho
         function removeFromCart(product) {
             const updatedCart = updateCart(product, "remove");
                 if (updatedCart.find((item) => item.name === product.name)) {
@@ -1742,7 +1524,7 @@
                 }
         }
 
-        // Event listener para os botões "Adicionar no carrinho"
+        //---Event listener para os botões "Adicionar no carrinho"
         document.querySelectorAll(".buttons button").forEach((button) => {
             button.addEventListener("click", function () {
                 const productElement = this.closest(".item");
@@ -1757,7 +1539,7 @@
             });
         });
 
-        // Função para adicionar item ao carrinho
+        //---Função para adicionar item ao carrinho
         function addToCart(product) {
             updateCart(product, "add");
             updateCartCount();
@@ -1765,9 +1547,9 @@
         }
 
 
-        // Função de buscar e mostral resultados
+        //---Função de buscar e mostral resultados
         
-        const items = [ // Lista de itens com URLs adicionadas
+        const items = [ //---Lista de itens com URLs adicionadas
         { 
             id: 1, 
             name: "Pastelaria é bom", 
@@ -1810,11 +1592,11 @@
         },
         ];
 
-        // Elementos do DOM
+        //---Elementos do DOM
         const searchInput = document.getElementById("search-input");
         const resultsContainer = document.getElementById("search-results");
 
-        // Função para exibir os resultados
+        //---Função para exibir os resultados
         function showSearchResults(query) {
         resultsContainer.innerHTML = ""; // Limpa resultados anteriores
 
@@ -1823,7 +1605,7 @@
             return;
         }
 
-        // Filtra itens com base no texto digitado
+        //---Filtra itens com base no texto digitado
         const filteredItems = items.filter(item =>
             item.name.toLowerCase().includes(query.toLowerCase())
         );
@@ -1870,21 +1652,21 @@
         resultsContainer.style.display = "block"; // Mostra resultados
         }
 
-        // Adicionar evento de input ao campo de busca
+        //---Adicionar evento de input ao campo de busca
         searchInput.addEventListener("input", event => {
         showSearchResults(event.target.value);
         });
 
 
 
-        // Função para sanitizar entradas
+        //---Função para sanitizar entradas
         function sanitizeInput(input) {
         const tempDiv = document.createElement("div");
         tempDiv.textContent = input;
         return tempDiv.innerHTML;
         }
 
-        // Validação de dados do carrinho
+        //---Validação de dados do carrinho
         function validateCartData(cart) {
         return Array.isArray(cart) && cart.every(item => {
             return typeof item.name === "string" &&
@@ -1893,7 +1675,7 @@
         });
         }
 
-        // Atualiza a contagem do carrinho
+        //---Atualiza a contagem do carrinho
         function updateCartCount() {
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
         if (!validateCartData(cart)) {
@@ -1911,7 +1693,7 @@
         }
         }
 
-        // Adiciona ao carrinho com validação
+        //---Adiciona ao carrinho com validação
         function updateCart(product, action) {
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
         if (!validateCartData(cart)) cart = [];
@@ -1933,7 +1715,7 @@
         updateCartCount();
         }
 
-        // Notificações amigáveis
+        //---Notificações amigáveis
         function showNotification(message, type = "success") {
         const notification = document.createElement("div");
         notification.className = `notification ${type}`;
@@ -1943,7 +1725,7 @@
         setTimeout(() => notification.remove(), 3000);
         }
 
-        // Busca com debounce
+        //---Busca com debounce
         function debounce(func, delay) {
         let timeout;
         return function (...args) {
@@ -1952,7 +1734,7 @@
         };
         }
 
-        // Busca dinâmica com validação
+        //---Busca dinâmica com validação
         function showSearchResults(query) {
         resultsContainer.innerHTML = "";
         if (!query.trim()) {
@@ -2002,17 +1784,17 @@
         resultsContainer.style.display = "block";
         }
 
-        // Event listener com debounce na pesquisa
+        //---Event listener com debounce na pesquisa
         searchInput.addEventListener("input", debounce(event => {
         showSearchResults(event.target.value);
         }, 300));
 
-        // Atualiza o carrinho ao carregar a página
+        //---Atualiza o carrinho ao carregar a página
         document.addEventListener("DOMContentLoaded", updateCartCount);
 
 
         
-        // Função que permite enviar os ítens para a página cart.html
+        //---Função que permite enviar os ítens para a página cart.html
         document.addEventListener("DOMContentLoaded", function () {
             const addToCartButtons = document.querySelectorAll(".add-to-cart");
             addToCartButtons.forEach((button) => {
@@ -2040,6 +1822,30 @@
                 });
             });
         });
+        const theTab = new Swiper(".tabbed-item", {
+            loop: false,
+            slidePerView: 1,
+            autoHeght: true,
+
+            breakpoints: {
+                481: {
+                    slidePerView: 2,
+                    slidePerGroup: 1,
+                    centeredSlides: false,
+                },
+                639: {
+                    slidePerView: 3,
+                    slidePerGroup: false,
+                    centeredSlides: false,
+                },
+                992: {
+                    slidePerView: 4,
+                    slidePerGroup: 4,
+                    centeredSlides: false,
+                },
+            },
+        });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>

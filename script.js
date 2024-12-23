@@ -156,6 +156,7 @@ const tabbedNav = new Swiper(".tnav", {
   centeredSlides: true,
   slidesPerGroup: false,
 });
+
 const theTab = new Swiper(".tabbed-item", {
   loop: true,
   slidePerView: 1,
