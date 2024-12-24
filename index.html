@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-pt">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://unpkg.com; style-src 'self' https://cdn.jsdelivr.net https://unpkg.com; img-src 'self' data:; font-src 'self' https://cdn.jsdelivr.net;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com; style-src 'self' https://cdn.jsdelivr.net https://unpkg.com; img-src 'self' data:; font-src 'self' https://cdn.jsdelivr.net;">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -18,7 +18,7 @@
     <meta property="og:site_name" content="RobéFood"/>
     <title>RobéFood - Restaurante Online</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css " crossorigin="anonymous" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css " crossorigin="anonymous" rel="stylesheet"/>
     <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" crossorigin="anonymous" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -62,15 +62,14 @@
                         <i class="ri-search-line"></i>
                         <i class="ri-close-line"></i>
                     </a>
-                    <ul class="cart-icon">
-                        <li>
-                            <a href="cart.html" rel="noopener noreferrer" referrerpolicy="no-referrer" class="cart-trigger" aria-label="Ir para o carrinho de compras">
-                                <i class="ri-shopping-cart-line"></i>
-                                <span id="cart-count">0</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <a href="#" class="m-trigger mobile-only" aria-label="Abrir menu mobile">
+                    <!-- Ícone do carrinho com contagem de itens -->
+                    <li class="cart-icon">
+                        <a href="cart.html" rel="noopener noreferrer" referrerpolicy="no-referrer" class="cart-trigger" aria-label="Ir para o carrinho de compras">
+                            <i class="ri-shopping-cart-line"></i>
+                            <span id="cart-count">0</span>
+                        </a>
+                    </li>
+                    <a href="#" class="m-trigger mobile-only" rel="noopener no-referrer" referrerpolicy="no-referrer">
                         <i class="ri-menu-line"></i>
                     </a>
                 </div>
